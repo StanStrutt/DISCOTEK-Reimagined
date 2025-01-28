@@ -1,0 +1,1414 @@
+[
+    {
+        "name": "Shortcuts design",
+        "url": "https://shortcuts.design/",
+        "description": "Centralized and searchable keyboard shortcuts for popular design, development and productivity programs.",
+        "image": "https://i.imgur.com/twvPGEj.png",
+        "categories": [
+            "Accessibility",
+            "Design",
+            "Development",
+            "Productivity",
+            "Free"
+        ]
+    },
+    {
+        "name": "unDraw",
+        "url": "https://undraw.co/illustrations",
+        "description": "Revolutionize your design work with our free, downloadable, customizable open-source SVG images. Unleash your creativity with unlimited design possibilities!",
+        "image": "https://i.imgur.com/QVntlhX.png",
+        "categories": [
+            "Design",
+            "Stock Images",
+            "Illustrations",
+            "Free"
+        ]
+    },
+    {
+        "name": "Google fonts",
+        "url": "https://fonts.google.com/",
+        "description": "Experience Google Fonts, a vast font library offering free, open-source font families. Explore interactive web directory and APIs for CSS and Android usage.",
+        "image": "https://i.imgur.com/pNkvwKv.png",
+        "categories": [
+            "Font",
+            "Free"
+        ]
+    },
+    {
+        "name": "Haikei",
+        "url": "https://haikei.app/",
+        "description": "Haikei is a web app to generate stunning visual content - ready to use with your design tools and workflow. Start designing for free. Free, no signups, no credit cards.",
+        "image": "https://i.imgur.com/5nPleSo.png",
+        "categories": [
+            "Colour",
+            "Design",
+            "Development",
+            "Productivity",
+            "Free"
+        ]
+    },
+    {
+        "name": "Kodezi",
+        "url": "https://kodezi.com/",
+        "description": "Kodezi: Simplifying code writing. Input desired functionality, receive generated code. Adaptation may be required for seamless integration.",
+        "image": "https://i.imgur.com/sBMMvTP.png",
+        "categories": [
+            "AI",
+            "Educational",
+            "Development",
+            "Productivity",
+            "Free Trial",
+            "Paid"
+        ]
+    },
+    {
+        "name": "hype-4.academy",
+        "url": "https://hype4.academy/tools",
+        "description": "This service provides many courses and tools used for UI. It also provides courses for other digital media applications although it is mostly catered towards UI.",
+        "image": "https://i.imgur.com/tttU6P1.png",
+        "categories": [
+            "Colour",
+            "Design",
+            "Editing",
+            "Educational",
+            "Development",
+            "Productivity",
+            "Free"
+        ]
+    },
+    {
+        "name": "Chat.Openai",
+        "url": "https://chat.openai.com/",
+        "description": "Experience the power of our AI chatbot! Get your queries answered, write emails efficiently, and summarize notes swiftly. Elevating productivity with AI, made easy!",
+        "image": "https://i.imgur.com/yLZJg9f.png",
+        "categories": [
+            "AI",
+            "Design",
+            "Editing",
+            "Educational",
+            "Inspiration",
+            "Miscellaneous",
+            "Development",
+            "Productivity",
+            "Free",
+            "Paid"
+        ]
+    },
+    {
+        "name": "Figma",
+        "url": "https://www.figma.com/",
+        "description": "Empower collaboration with Figma! Store and share files, mirror your desktop, and work across multiple workspaces, all from your mobile device. Teamwork made easy!",
+        "image": "https://i.imgur.com/nVRjOSQ.png",
+        "categories": [
+            "Animation",
+            "Colour",
+            "Collaboration",
+            "Design",
+            "Development",
+            "Productivity",
+            "Free",
+            "Free Trial",
+            "Paid"
+        ]
+    },
+    {
+        "name": "unsplash",
+        "url": "https://unsplash.com/",
+        "description": "Unsplash is a website, owned by Getty Images, that allows you to access free stock photography.",
+        "image": "https://i.imgur.com/I3pFmOw.png",
+        "categories": [
+            "Design",
+            "Stock Images",
+            "Free"
+        ]
+    },
+    {
+        "name": "Vimeo",
+        "url": "https://vimeo.com/",
+        "description": "Vimeo: Ad-free video sharing with live-streaming and customization. Revenue from subscriptions and software services for businesses and creators.",
+        "image": "https://i.imgur.com/8Rp1jLS.png",
+        "categories": [
+            "Animation",
+            "Audio",
+            "Collaboration",
+            "Design",
+            "Editing",
+            "Free",
+            "Free Trial",
+            "Paid"
+        ]
+    },
+    {
+        "name": "Veed",
+        "url": "https://www.veed.io/",
+        "description": "Veed: Simplifying news. Curated videos and articles from your favorite sources, updated throughout the day. Choose personalized topics, save, and share effortlessly.",
+        "image": "https://i.imgur.com/tZMHqzZ.png",
+        "categories": [
+            "AI",
+            "Animation",
+            "Audio",
+            "Design",
+            "Editing",
+            "Free",
+            "Paid"
+        ]
+    },
+    {
+        "name": "Anchor",
+        "url": "https://anchor.fm/",
+        "description": "Anchor: Create and edit your own podcasts for free. Easy-to-use app. Also, enjoy listening to other podcasts. Get started with podcasting today!",
+        "image": "https://i.imgur.com/Sbst77C.png",
+        "categories": [
+            "Podcasting",
+            "Free"
+        ]
+    },
+    {
+        "name": "Clideo",
+        "url": "https://clideo.com/video-editor",
+        "description": "Clideo: Unleash creativity! Trim, add music, text, stickers, glitch effects. Pro editor for music videos and photos. Unlimited editing/saving with InShot.",
+        "image": "https://i.imgur.com/QVTeMig.png",
+        "categories": [
+            "Videography",
+            "Free",
+            "Audio",
+            ""
+        ]
+    },
+    {
+        "name": "Bitable",
+        "url": "https://biteable.com/tools/",
+        "description": "Biteable: Easy-to-use video-making and editing tool. Ideal for business digital media skills. Versatile for various tasks. Get creative effortlessly.",
+        "image": "https://i.imgur.com/ZmoeCg6.png",
+        "categories": [
+            "Videography",
+            "Paid"
+        ]
+    },
+    {
+        "name": "Midjourney",
+        "url": "https://midjourney.com/",
+        "description": "MidJourney: Input text, get AI-generated images. Use them for anything you want. Unleash your creativity with our versatile image generation app.",
+        "image": "https://i.imgur.com/ONbzPJ2.png",
+        "categories": [
+            "AI",
+            "Image Generator",
+            "Paid"
+        ]
+    },
+    {
+        "name": "Dribble",
+        "url": "https://dribbble.com/",
+        "description": "Dribbble: The ultimate platform for designers and creatives. Showcase your work, connect with peers, find jobs, and fuel your creative journey.",
+        "image": "https://i.imgur.com/HEwjMUH.png",
+        "categories": [
+            "Inspiration",
+            "Free"
+        ]
+    },
+    {
+        "name": "Crello",
+        "url": "https://create.vista.com/",
+        "description": "Unleash your creativity with Crello, a graphic design tool for crafting professional social media posts, marketing content, website graphics, videos, and animations.",
+        "image": "https://i.imgur.com/0E0hWoH.png",
+        "categories": [
+            "Design",
+            "Paid",
+            "Free Trial",
+            "Inspiration"
+        ]
+    },
+    {
+        "name": "Padlet",
+        "url": "https://en-gb.padlet.com/",
+        "description": "Padlet: Create your desired content with ease. From bulletin boards to blogs and portfolios, empower yourself with this versatile doc-website builder",
+        "image": "https://i.imgur.com/XAF8Zgr.png",
+        "categories": [
+            "Productivity",
+            "Free",
+            "Collaboration",
+            "Design"
+        ]
+    },
+    {
+        "name": "stark",
+        "url": "https://www.getstark.co/",
+        "description": "Stark: Streamlining collaboration on accessibility issues between designers and developers. Making digital spaces more inclusive, faster and simpler than ever!",
+        "image": "https://i.imgur.com/gGH8DNQ.png",
+        "categories": [
+            "Design",
+            "Free",
+            "Paid",
+            "Blogging"
+        ]
+    },
+    {
+        "name": "Illustrations",
+        "url": "https://illlustrations.co/",
+        "description": "Unlock creativity with Illustration, a free online tool offering access to hundreds of unique illustrations for diverse uses. Your gateway to vibrant visuals!",
+        "image": "https://i.imgur.com/sJjiKz5.png",
+        "categories": [
+            "Illustration",
+            "Design",
+            "Stock images",
+            "Free"
+        ]
+    },
+    {
+        "name": "Webflow",
+        "url": "https://webflow.com/",
+        "description": "Experience Webflow, the no-code solution for web design! Ideal for designers and marketers, create responsive websites, eCommerce sites, blogs, landing pages visually.",
+        "image": "https://i.imgur.com/cvgz6ul.png",
+        "categories": [
+            "Design",
+            "Free",
+            "Paid",
+            ""
+        ]
+    },
+    {
+        "name": "UX Design weekly",
+        "url": "https://uxdesignweekly.com/",
+        "description": "Join UX Design Weekly community! Get curated UX articles, resources, and portfolios via weekly emails. Curated by Kenny Chen, Google design lead in SoCal.",
+        "image": "https://i.imgur.com/Xt7vGBF.png",
+        "categories": [
+            "Design",
+            "Free",
+            "Blogging"
+        ]
+    },
+    {
+        "name": "Medium",
+        "url": "https://medium.com/",
+        "description": "Medium is a great tool to help you create your own blog. There are lots of different blogs that you can read for inspiration that cover evey topic imaginable.",
+        "image": "https://i.imgur.com/MJTq1V9.png",
+        "categories": [
+            "Blogging",
+            "Free"
+        ]
+    },
+    {
+        "name": "Wakelet",
+        "url": "https://wakelet.com/",
+        "description": "Wakelet allows the user to compile their own information and to find out information from others. This is displayed in a simple and easy to read format.",
+        "image": "https://i.imgur.com/Tfllp5k.png",
+        "categories": [
+            "Inspiration",
+            "Collaboration",
+            "Free"
+        ]
+    },
+    {
+        "name": "Freecodecamp",
+        "url": "https://www.freecodecamp.org/",
+        "description": "Unlock web development with Free Code Camp! Offering extensive training accessible for all, start from scratch or your comfort zone.",
+        "image": "https://i.imgur.com/HxPWvfR.png",
+        "categories": [
+            "Development",
+            "Educational",
+            "Free"
+        ]
+    },
+    {
+        "name": "Wix",
+        "url": "https://www.wix.com/",
+        "description": "Create professional websites effortlessly with Wix. Its user-friendly drag-and-drop interface lets you customize designs without coding expertise!",
+        "image": "https://i.imgur.com/WBI0Jlb.png",
+        "categories": [
+            "Design",
+            "Accessibility",
+            "Inspiration",
+            "Fonts",
+            "Free",
+            "Paid"
+        ]
+    },
+    {
+        "name": "SquareSpace",
+        "url": "https://www.squarespace.com/",
+        "description": "SquareSpace is an all in one content manager that is perferct for beginners looking to create their first website.",
+        "image": "https://i.imgur.com/ynHi7rG.png",
+        "categories": [
+            "Design",
+            "Accessibility",
+            "Inspiration",
+            "Fonts",
+            "Free",
+            "Paid"
+        ]
+    },
+    {
+        "name": "Canva",
+        "url": "Canva.com",
+        "description": "Unleash creativity with Canva! Create stunning designs effortlessly on a user-friendly platform. Explore templates for presentations, social media, and more.",
+        "image": "https://i.imgur.com/bm41JjJ.png",
+        "categories": [
+            "Design",
+            "Free",
+            "Paid"
+        ]
+    },
+    {
+        "name": "Nightcafe",
+        "url": "https://creator.nightcafe.studio/",
+        "description": "NightCafe works in a similair way to MidJourney as it allows you to enter a written prompt and from here the prompt is taken and converted into an AI generated image.",
+        "image": "https://i.imgur.com/84kPMvr.png",
+        "categories": [
+            "AI",
+            "Free",
+            "Paid"
+        ]
+    },
+    {
+        "name": "iconfinder",
+        "url": "https://www.iconfinder.com/",
+        "description": "This is a free and paid tool that is used to find different icons, it is extremely useful for when you need an icon for your work.",
+        "image": "https://i.imgur.com/ObhEBxO.png",
+        "categories": [
+            "Icon",
+            "Free",
+            "Paid",
+            "Illustrations"
+        ]
+    },
+    {
+        "name": "Pexels",
+        "url": "https://www.pexels.com/",
+        "description": "Pexels: A reputable provider of stock photography and footage. With over 3.2 million free assets, its amazing reputation is backed by Canva's ownership.",
+        "image": "https://i.imgur.com/3awBRnn.png",
+        "categories": [
+            "Stock photo/video",
+            "Free"
+        ]
+    },
+    {
+        "name": "coverr",
+        "url": "https://coverr.co/",
+        "description": "Coverr video is a completely free stock footage website that allows you to download and use high-quality stock videos anywhere. And there is no catch!",
+        "image": "https://i.imgur.com/aYgIG1P.png",
+        "categories": [
+            "Free",
+            "Stock photo Stock Video"
+        ]
+    },
+    {
+        "name": "Dareful",
+        "url": "https://dareful.com/",
+        "description": "Dareful.com is your source for completely free 4K & HD stock video clips that can be downloaded and used any way you want, forever! You never pay a dime.",
+        "image": "https://i.imgur.com/5kwiYUF.png",
+        "categories": [
+            "Stock photo",
+            "Stock Video",
+            "Free"
+        ]
+    },
+    {
+        "name": "Monday",
+        "url": "monday.com",
+        "description": "Unlock endless possibilities with monday.com Work OS. Customize workflows for marketing, CRM, HR, software development, and more. Automate, collaborate.",
+        "image": "https://i.imgur.com/pnsAZ6S.png",
+        "categories": [
+            "Collaborative Tool",
+            "Free Paid"
+        ]
+    },
+    {
+        "name": "Animate.css",
+        "url": "https://animate.style/",
+        "description": "Elevate your website with Animate.css! This cross-browser library offers 60+ customizable CSS animations to bring your elements to life effortlessly.",
+        "image": "https://i.imgur.com/hpAM3gJ.png",
+        "categories": [
+            "Animation",
+            "Programming",
+            "Paid",
+            "Free Trial"
+        ]
+    },
+    {
+        "name": "AOS",
+        "url": "https://michalsnik.github.io/aos/",
+        "description": "(Animate on Scroll) is a library that allows you to animate elements as you scroll down the page. It's lightweight, flexible, and easy to use.",
+        "image": "https://i.imgur.com/QMeahnb.png",
+        "categories": [
+            "Programming",
+            "Free"
+        ]
+    },
+    {
+        "name": "magic Animation",
+        "url": "https://www.minimamente.com/",
+        "description": "Magic Animations is a CSS library that lets you animate elements with just a few lines of code. It has a variety of animations, including bounce, fade, flip, and zoom.",
+        "image": "https://i.imgur.com/3jnMptY.png",
+        "categories": [
+            "Animation",
+            "Collaboration",
+            "Free"
+        ]
+    },
+    {
+        "name": "Typed.js",
+        "url": "https://mattboldt.com/demos/typed-js/",
+        "description": "Typed.js is a tool for creating dynamic, typed animations. You can use it to animate headlines, captions, and other text elements on your website.",
+        "image": "https://i.imgur.com/2Vkn100.png",
+        "categories": [
+            "Programming",
+            "Free"
+        ]
+    },
+    {
+        "name": "Velocity.js",
+        "url": "http://velocityjs.org/",
+        "description": "Velocity.js is a fast, feature-rich library for animation. It's easy to use, and it supports a wide range of animations and effects, including scrolling, fading.",
+        "image": "https://i.imgur.com/U7iyIAV.png",
+        "categories": [
+            "Programming",
+            "Free"
+        ]
+    },
+    {
+        "name": "W3.CSS",
+        "url": "https://www.w3schools.com/",
+        "description": "Elevate your website aesthetics with W3.CSS, a library offering a range of easy-to-use animations. Add a dynamic touch to your site, customizable to your needs!",
+        "image": "https://i.imgur.com/FufYJOE.png",
+        "categories": [
+            "Programming",
+            "Free"
+        ]
+    },
+    {
+        "name": "Lottie",
+        "url": "https://airbnb.design/lottie/",
+        "description": "Lottie: Create stunning vector animations for web and mobile apps. Scale and maintain resolution-independent animations effortlessly with this powerful library.",
+        "image": "https://i.imgur.com/tB6m5na.png",
+        "categories": [
+            "Animations",
+            "Design",
+            "Free"
+        ]
+    },
+    {
+        "name": "Particles.js",
+        "url": "https://vincentgarreau.com/particles.js/",
+        "description": "Elevate your designs with Particles.js! This library enables scalable and resolution-independent particle animations for web and mobile applications.",
+        "image": "https://i.imgur.com/57qqZCN.png",
+        "categories": [
+            "Animations",
+            "Free"
+        ]
+    },
+    {
+        "name": "Anime.js",
+        "url": "https://animejs.com/",
+        "description": "Unleash dynamic visuals with Anime.js, a flexible library for crafting complex animations. Features SVG support, responsive animation, JavaScript-controlled animations!",
+        "image": "https://i.imgur.com/lVIa8oA.png",
+        "categories": [
+            "Animation Programming",
+            "Free"
+        ]
+    },
+    {
+        "name": "Feather icons",
+        "url": "https://feathericons.com/",
+        "description": "Level up your designs with Feather icons! These fonts offer customizable Scalable Vector Graphics icons for apps and websites. Easily adjust shadows, colors, sizes.",
+        "image": "https://i.imgur.com/DlzcSbL.png",
+        "categories": [
+            "Fonts",
+            "Accessibility",
+            "illustrations",
+            "Free"
+        ]
+    },
+    {
+        "name": "Humane by Design",
+        "url": "https://humanebydesign.com/",
+        "description": "Humane by Design: Ethical guidance for user-centric digital products. Prioritize well-being amidst rapid growth of mobile technology and limited time and attention.",
+        "image": "https://i.imgur.com/2vjvmlQ.png",
+        "categories": [
+            "Accessibility",
+            "Blogging",
+            "Free"
+        ]
+    },
+    {
+        "name": "Design System Checklist",
+        "url": "https://www.designsystemchecklist.com/",
+        "description": "Open-source guide for planning, building, and growing a design system. Covers design language, tokens, core components, tooling, and project management essentials.",
+        "image": "https://i.imgur.com/bxRlSsW.png",
+        "categories": [
+            "Design",
+            "Free"
+        ]
+    },
+    {
+        "name": "Layout",
+        "url": "https://layout.fm/",
+        "description": "A weekly podcast about design, technology, programming and everything else.",
+        "image": "https://i.imgur.com/QdOIizl.png",
+        "categories": [
+            "Podcasting",
+            "Free"
+        ]
+    },
+    {
+        "name": "Cute Stock Footage",
+        "url": "https://cutestockfootage.com/",
+        "description": "Cutestockfootage.com offers free or affordable video, sound, and photo material for enthusiasts, filmmakers, editors, artists, musicians, and more",
+        "image": "https://i.imgur.com/ap0ZFdg.png",
+        "categories": [
+            "Stock Photo",
+            "Stock Video",
+            "Free",
+            "Paid",
+            "Free Trial"
+        ]
+    },
+    {
+        "name": "Open Peeps",
+        "url": "https://www.openpeeps.com/",
+        "description": "Open Peeps is a set of hand-drawn illustrations. Files included. Figma, PNG, Sketch, Studio, SVG, XD.",
+        "image": "https://i.imgur.com/ap0ZFdg.png",
+        "categories": [
+            "Illustration",
+            "Icons",
+            "Free"
+        ]
+    },
+    {
+        "name": "Checklist Design",
+        "url": "https://www.checklist.design/",
+        "description": "Checklist Design is a curated list of checklists ranging from website pages, to UI components, all the way to branding assets.",
+        "image": "https://i.imgur.com/PJBO4lX.png",
+        "categories": [
+            "Miscellaneous",
+            "Accessibility",
+            "Design",
+            "Free"
+        ]
+    },
+    {
+        "name": "Carbon Design System",
+        "url": "https://carbondesignsystem.com/",
+        "description": "Carbon, IBM's open-source design system, empowers product development with code, design tools, guidelines, and a thriving community.",
+        "image": "https://i.imgur.com/rw0MSuc.png",
+        "categories": [
+            "Design.",
+            "Development",
+            "Free"
+        ]
+    },
+    {
+        "name": "Color Hunt",
+        "url": "https://colorhunt.co/",
+        "description": "Discover the newest hand-picked color palettes of Color Hunt. Get color inspiration for your design and art projects.",
+        "image": "https://i.imgur.com/uSnKg3l.png",
+        "categories": [
+            "Colour",
+            "Inspiration",
+            "Free"
+        ]
+    },
+    {
+        "name": "One Page Love",
+        "url": "https://onepagelove.com/",
+        "description": "Discover awe-inspiring one-page websites, templates, and resources at One Page Love. And explore stunning designs in their gallery.",
+        "image": "https://i.imgur.com/zNSucc8.png",
+        "categories": [
+            "Inspiration",
+            "Design",
+            "Blog",
+            "Free"
+        ]
+    },
+    {
+        "name": "The Noun Project",
+        "url": "https://thenounproject.com/",
+        "description": "The Noun Project has the most diverse collection of free icons and stock photos. Download SVG and PNG. Over 5 million art-quality icons and free photos.",
+        "image": "https://i.imgur.com/onWycqj.png",
+        "categories": [
+            "Icon",
+            "Stock Photo",
+            "Free"
+        ]
+    },
+    {
+        "name": "Hey Designer",
+        "url": "https://heydesigner.com/",
+        "description": "HeyDesigner is the go-to newsletter for product people, UXers, PMs, and design engineers.",
+        "image": "https://i.imgur.com/nvXxFcu.png",
+        "categories": [
+            "Miscellaneous",
+            "Design",
+            "Free"
+        ]
+    },
+    {
+        "name": "UI Sources",
+        "url": "https://www.uisources.com/home",
+        "description": "UI Sources is used by over 100k designers, developers, PMs and teams to find the best practices, supercharge design research and find product insights. Get started now.",
+        "image": "https://i.imgur.com/rQJ6jA6.png",
+        "categories": [
+            "Inspiration",
+            "Free Trial",
+            "Paid"
+        ]
+    },
+    {
+        "name": "Design Calender",
+        "url": "https://www.designcalendar.io/events",
+        "description": "Discover the world's top design events. We curate the best talks, workshops, conferences, and exhibitions for creative minds who embrace ideas and bring them to life.",
+        "image": "https://i.imgur.com/B7YrBvD.png",
+        "categories": [
+            "Inspiration",
+            "Collaborative Tool",
+            "jobs",
+            "Free"
+        ]
+    },
+    {
+        "name": "Minimal Gallary",
+        "url": "https://minimal.gallery/",
+        "description": "Create a sleek card-based gallery with this configurable app. Use it standalone or embed it in a web page. Showcase maps, scenes, and apps in a clean and simple design.",
+        "image": "https://i.imgur.com/pLHQwUj.png",
+        "categories": [
+            "Inspiration",
+            "Design",
+            "Jobs",
+            "Free"
+        ]
+    },
+    {
+        "name": "httpster",
+        "url": "https://httpster.net/",
+        "description": "Quickly load content with httpster, a simple HTTP server. Install it via npm (included with NodeJS).",
+        "image": "https://i.imgur.com/JrKgm4M.png",
+        "categories": [
+            "Inspiration",
+            "Design",
+            "Free"
+        ]
+    },
+    {
+        "name": "Brand Colors",
+        "url": "https://brandcolors.net/",
+        "description": "BrandColors.net: Largest collection of official colors for popular brands. Created by Design Bombs as a useful reference. 600+ brands, 1600+ colors, ever-growing.",
+        "image": "https://i.imgur.com/qSY4vOf.png",
+        "categories": [
+            "Colour",
+            "Inspiration",
+            "Free"
+        ]
+    },
+    {
+        "name": "Type Wolf",
+        "url": "https://www.typewolf.com/",
+        "description": "Choose the perfect font combination for your design project with Typewolf. Explore font examples and recommendations, including top Helvetica alternatives.",
+        "image": "https://i.imgur.com/1VT2CT0.png",
+        "categories": [
+            "Fonts",
+            "Inspiration",
+            "Free"
+        ]
+    },
+    {
+        "name": "Responsively",
+        "url": "https://responsively.app/",
+        "description": "Experience seamless responsive web development with Responsively App. View web apps on multiple devices simultaneously with mirrored interactions, DevTools.",
+        "image": "https://i.imgur.com/LYGVfuP.png",
+        "categories": [
+            "Programming",
+            "Inspiration",
+            "Collaboration",
+            "Free"
+        ]
+    },
+    {
+        "name": "Muzli",
+        "url": "https://muz.li/",
+        "description": "Get design inspiration, news, and trends tailored to your tastes. Instantly discover cutting-edge projects, web design inspiration, logos, trends, illustrations.",
+        "image": "https://i.imgur.com/MJGO6vT.png",
+        "categories": [
+            "Design",
+            "Inspiration",
+            "Blogging",
+            "Free"
+        ]
+    },
+    {
+        "name": "Mobbin",
+        "url": "https://mobbin.com/",
+        "description": "Save time on UI & UX research with Mobbin's 100,000+ searchable mobile & web screenshots library. Get the research you need for your website effortlessly!",
+        "image": "https://i.imgur.com/7x3yIrY.png",
+        "categories": [
+            "Design",
+            "Free Trial",
+            "Paid",
+            "Free"
+        ]
+    },
+    {
+        "name": "Streamline",
+        "url": "https://www.streamlinehq.com/",
+        "description": "Streamline is the winner of the best graphic resource in 2022 by Figma. The largest icon, illustration, emoji and element sets in the world.",
+        "image": "https://i.imgur.com/LI7wnl5.png",
+        "categories": [
+            "Design",
+            "Icons",
+            "Inspiration",
+            "Paid",
+            "Free Trial"
+        ]
+    },
+    {
+        "name": "sketch",
+        "url": "https://www.sketch.com/?ref=designresourc.es",
+        "description": "Discover the largest collection of free & premium design resources for Sketch at Sketch App Sources. Design, collaborate, prototype, learn, ideate faster with Sketch!",
+        "image": "https://i.imgur.com/MVaH5RL.png",
+        "categories": [
+            "Design",
+            "Collaboration",
+            "Paid",
+            "Free Trial"
+        ]
+    },
+    {
+        "name": "Law UX",
+        "url": "https://lawsofux.com/?ref=designresourc.es",
+        "description": "laws UX IS a collection of practices that designers can consideer when bubuilding user interfaces.",
+        "image": "https://i.imgur.com/XaEbb4m.png",
+        "categories": [
+            "Design",
+            "Blog",
+            "Paid"
+        ]
+    },
+    {
+        "name": "Red Ketchup",
+        "url": "https://redketchup.io/",
+        "description": "Easily compress, convert, resize, and edit images, GIFs, videos, icons, and more at redketchup.io.",
+        "image": "https://i.imgur.com/dzyOUUZ.png",
+        "categories": [
+            "Editing",
+            "Icon",
+            "Free"
+        ]
+    },
+    {
+        "name": "user stock",
+        "url": "https://userstock.io/",
+        "description": "Discover diverse avatar photos on UserStock, perfect for personas, UI mockups, design projects, and more. Free for personal and commercial use.",
+        "image": "https://i.imgur.com/xZqZ9ke.png",
+        "categories": [
+            "Stock photo/video",
+            "Free"
+        ]
+    },
+    {
+        "name": "Color safe",
+        "url": "http://colorsafe.co/",
+        "description": "Colorsafe: Get precise colors for digital work. The app provides accurate color codes for easy integration into your projects.",
+        "image": "https://i.imgur.com/RgZFiLr.png",
+        "categories": [
+            "Accessibility",
+            "Colour",
+            "Free"
+        ]
+    },
+    {
+        "name": "UIJar",
+        "url": "https://oykun.com/",
+        "description": "What is UI Jar? UI Jar is a handpicked design inspiration for your real life projects All posts are either from real life projects or ideas that can be applied to.",
+        "image": "https://i.imgur.com/lynlb5S.png",
+        "categories": [
+            "Inspiration",
+            "Design",
+            "Blogging",
+            "Free"
+        ]
+    },
+    {
+        "name": "Ionic",
+        "url": "https://ionic.io/ionicons",
+        "description": "Ionicons is a completely open-source icon set with 1,300 icons crafted for web, iOS, Android, and desktop apps.",
+        "image": "https://i.imgur.com/id8M96L.png",
+        "categories": [
+            "Icon",
+            "illustration",
+            "Free"
+        ]
+    },
+    {
+        "name": "Design better",
+        "url": "https://www.designbetter.co/",
+        "description": "DesignBetter. Meet the digital whiteboard transforming the way design teams work together. Try Freehand. Resources. Pricing.",
+        "image": "https://i.imgur.com/L9E35bF.png",
+        "categories": [
+            "Design",
+            "Inspiration",
+            "Collaboration",
+            "Podcast",
+            "Free trial",
+            "Paid"
+        ]
+    },
+    {
+        "name": "Boooom",
+        "url": "https://boooom.co/",
+        "description": "Boooom: The top job board for design management and leadership roles. Connecting design leaders with high-profile opportunities at select organizations.",
+        "image": "https://i.imgur.com/4ANduN2.png",
+        "categories": [
+            "Employment",
+            "Free"
+        ]
+    },
+    {
+        "name": "Site Inspire",
+        "url": "https://www.siteinspire.com/",
+        "description": "siteInspire: Filter website designs by Style, Type, Subject, Platform. Precise results with keywords in search bar. Robust search saves time.",
+        "image": "https://i.imgur.com/U2rL0yF.png",
+        "categories": [
+            "Inspiration",
+            "Design",
+            "Free"
+        ]
+    },
+    {
+        "name": "Awwwards",
+        "url": "https://www.awwwards.com/",
+        "description": "awwwards: Expert panel of global digital creatives (designers, developers, agencies) scoring submitted web projects. Recognizing talent and excellence in digital design",
+        "image": "https://i.imgur.com/gqFF61m.png",
+        "categories": [
+            "Inspiration",
+            "Design",
+            "Blogging",
+            "Free"
+        ]
+    },
+    {
+        "name": "Gridzzly",
+        "url": "Gridzzly.com",
+        "description": "Gridzzly: Simple web tool for customizable grid, graph, and ruled paper. Choose shape (dots, lines, squares, hexagons), and adjust spacing.",
+        "image": "https://i.imgur.com/ApIa8iN.png",
+        "categories": [
+            "Educational",
+            "Free"
+        ]
+    },
+    {
+        "name": "CodeinWP",
+        "url": "https://www.codeinwp.com/pattern-collection/",
+        "description": "CodeinWP: Blog for DIY website builders. Weekly content includes tutorials, lists, comparisons, and expertly crafted pieces by a dedicated team of 10+ writers.",
+        "image": "https://i.imgur.com/UrGPxL2.png",
+        "categories": [
+            "Inspiration",
+            "Illustration",
+            "Free"
+        ]
+    },
+    {
+        "name": "Happy Hues",
+        "url": "https://www.happyhues.co/",
+        "description": "Happy Hues is a colour palette inspiration site that acts as a real world example as to how the colours could be used in your design projects. Try changing the palette!",
+        "image": "https://i.imgur.com/TGrS0iE.png",
+        "categories": [
+            "Colour",
+            "Free"
+        ]
+    },
+    {
+        "name": "Life Of Vids",
+        "url": "https://lifeofvids.com/",
+        "description": "Life of Vids has a collection of free High-resolution videos, clips, and loops for personal & commercial uses.",
+        "image": "https://i.imgur.com/ZFTLFQy.png",
+        "categories": [
+            "Colour",
+            "Stock Videos",
+            "Stock Photos",
+            "Free",
+            "Paid"
+        ]
+    },
+    {
+        "name": "* Blogs grader",
+        "url": "https://blogs.grader.affistash.com/?ref=producthunt",
+        "description": "Grader: Analyze your website to uncover strengths and areas for improvement. Boost search traffic by optimizing site performance and search engine visibility.",
+        "image": "https://i.imgur.com/GhVu7fo.png",
+        "categories": [
+            "Blogging",
+            "Free"
+        ]
+    },
+    {
+        "name": "* copylime",
+        "url": "copylime.com",
+        "description": "Copylime: AI writing tool generates content with ease. Blog posts, marketing copy, sales, and more. Templates simplify writing, conquer writer's block.",
+        "image": "https://i.imgur.com/nUMrP9P.png",
+        "categories": [
+            "Blogging",
+            "AI",
+            "Free",
+            "Paid"
+        ]
+    },
+    {
+        "name": "* mozart game Sdk",
+        "url": "https://mozart.xyz/?ref=producthunt",
+        "description": "Mozart: Simplifying game asset creation and management for studios. Create, manage, and seamlessly integrate assets into your game with ease.",
+        "image": "https://i.imgur.com/qKim7Q2.png",
+        "categories": [
+            "Development",
+            "Educational",
+            "Free"
+        ]
+    },
+    {
+        "name": "* wavelAI",
+        "url": "https://wavel.ai/?ref=producthunt",
+        "description": "WaveAI: Unlock human creative expression with advanced AI and ML. Unique AI-based musical assistance. User-centric approach, empowering creativity.",
+        "image": "https://i.imgur.com/c8YuGRl.png",
+        "categories": [
+            "AI",
+            "Free",
+            "Paid",
+            "Free Trial"
+        ]
+    },
+    {
+        "name": "* PostPerfect AI",
+        "url": "https://postperfect.xyz/?ref=producthunt",
+        "description": "PostPerfect: AI-powered tool for perfect tweets. Get grammar, punctuation, tone suggestions. Enhance your tweets effortlessly, right from Twitter.",
+        "image": "https://i.imgur.com/ic2c5rw.png",
+        "categories": [
+            "AI",
+            "Free"
+        ]
+    },
+    {
+        "name": "Blobmaker",
+        "url": "https://www.blobmaker.app/",
+        "description": "Blobmaker: Free generative design tool by z creative labs. Easily create unique, organic-looking SVG shapes for landing pages, illustrations, and more.",
+        "image": "https://i.imgur.com/6Nd25EY.png",
+        "categories": [
+            "Illustration",
+            "Free"
+        ]
+    },
+    {
+        "name": "fiverr",
+        "url": "https://www.fiverr.com/",
+        "description": "Fiverr: Largest marketplace for digital services. Find freelancers for your projects. Streamlined platform for seamless transactions between buyers and sellers.",
+        "image": "https://i.imgur.com/b9yPBHZ.png",
+        "categories": [
+            "Jobs",
+            "Free"
+        ]
+    },
+    {
+        "name": "freelancer",
+        "url": "https://www.freelancer.com/",
+        "description": "Freelancer: Marketplace connecting employers and employees. Post work, receive bids through competitive tender process. Find the right match!",
+        "image": "https://i.imgur.com/e9wcavR.png",
+        "categories": [
+            "Jobs",
+            "Free"
+        ]
+    },
+    {
+        "name": "Upwork",
+        "url": "https://www.upwork.com/",
+        "description": "Upwork: Freelancer marketplace for writing, design, web dev. Find projects, communicate, get paid. Gain experience without constant cold pitching.",
+        "image": "https://i.imgur.com/8zdzVu0.png",
+        "categories": [
+            "Jobs",
+            "Free"
+        ]
+    },
+    {
+        "name": "indeed",
+        "url": "https://uk.indeed.com/",
+        "description": "Indeed offers resources to search, apply, and compare job opportunities. Utilize their tools to find positions aligned with your career goals easily.",
+        "image": "https://i.imgur.com/L5aXoHB.png",
+        "categories": [
+            "Jobs",
+            "Free"
+        ]
+    },
+    {
+        "name": "LinkedIN",
+        "url": "https://uk.linkedin.com/",
+        "description": "LinkedIn connects users in the same industry, facilitating networking and collaboration. It's valuable for entering, collaborating, freelancing, and self-promotion.",
+        "image": "https://i.imgur.com/AFC7Z22.png",
+        "categories": [
+            "Jobs",
+            "Free",
+            "Paid"
+        ]
+    },
+    {
+        "name": "Envato Elements",
+        "url": "https://elements.envato.com/?gclid=Cj0KCQjwuLShBhC_ARIsAFod4fIdVzki0-Vyq9wn-U1zM_H7C3JXolv8Ljq8CiSN7pvCwSpqJu81GWEaAsJTEALw_wcB",
+        "description": "Envato Elements: Unlimited subscription for digital assets. Perfect for agencies, designers, marketers, and professionals requiring frequent or high-volume access.",
+        "image": "https://i.imgur.com/6V8OGkc.png",
+        "categories": [
+            "Audio",
+            "Stock Images",
+            "Design",
+            "Fonts",
+            "Paid"
+        ]
+    },
+    {
+        "name": "goodbrief",
+        "url": "https://goodbrief.io/",
+        "description": "GoodBrief: Generate design briefs easily. Choose categories (logo, billboard, illustration) & industry (food, retail, real estate) for tailored briefs.",
+        "image": "https://i.imgur.com/AMJIxGi.png",
+        "categories": [
+            "AI",
+            "Design",
+            "Free"
+        ]
+    },
+    {
+        "name": "Runway",
+        "url": "https://runwayml.com/",
+        "description": "RunwayML empowers artists to utilize machine learning tools effortlessly. Create and publish pre-trained models for various media like video, audio and text.",
+        "image": "https://i.imgur.com/WLIUerO.png",
+        "categories": [
+            "AI",
+            "Free",
+            "Paid"
+        ]
+    },
+    {
+        "name": "Opus AI",
+        "url": "https://www.opus.pro/",
+        "description": "Opus Pro: Visual dev tool for rapid HTML5, Flash & Windows app/resource development. From games to e-learning, simulations, and DB apps - no/low programming needed.",
+        "image": "https://i.imgur.com/iNPaFKb.png",
+        "categories": [
+            "AI",
+            "Paid"
+        ]
+    },
+    {
+        "name": "Descript",
+        "url": "https://www.descript.com/",
+        "description": "Descript simplifies audio-to-text transcription. Create a project, select audio file, and wait a few seconds for accurate transcription.",
+        "image": "https://i.imgur.com/OQHsDfn.png",
+        "categories": [
+            "Accessibility",
+            "Editing",
+            "Podcasting",
+            "Free",
+            "Paid"
+        ]
+    },
+    {
+        "name": "IMAI",
+        "url": "https://influencermarketing.ai/",
+        "description": "Designed to promote brands like human influencers, programmed entities create content and interact with audiences across platforms.",
+        "image": "https://i.imgur.com/zE4glRe.png",
+        "categories": [
+            "AI",
+            "Paid"
+        ]
+    },
+    {
+        "name": "Oxolo",
+        "url": "https://www.oxolo.com/",
+        "description": "Oxolo: AI platform for instant product video ads. Oxolo handles everything - writing, storyboarding, actors, voice-over, music, imagery. Full video production in minutes!",
+        "image": "https://i.imgur.com/YArgZ5B.png",
+        "categories": [
+            "AI",
+            "Editing",
+            "Free",
+            "Paid"
+        ]
+    },
+    {
+        "name": "Beautiful",
+        "url": "https://www.beautiful.ai/",
+        "description": "Create captivating presentations effortlessly with Beautiful.ai. It uses AI to design slides based on your content and preferences.",
+        "image": "https://i.imgur.com/wxXejqO.png",
+        "categories": [
+            "AI",
+            "Miscellaneous",
+            "Productivity",
+            "Paid"
+        ]
+    },
+    {
+        "name": "Decktopus",
+        "url": "https://app.decktopus.com/",
+        "description": "Decktopus AI simplifies presentation design & formatting. It generates outlines, slide content, images, icons, items, notes, and scripts effortlessly.",
+        "image": "https://i.imgur.com/7tLX3GD.png",
+        "categories": [
+            "AI",
+            "Productivity",
+            "Paid"
+        ]
+    },
+    {
+        "name": "Magic Slides",
+        "url": "https://www.magicslides.app/",
+        "description": "MagicSlides leverages the power of AI to generate captivating slides complete with images and relevant content based on your given topic and slide count.",
+        "image": "https://i.imgur.com/bbnTOq0.png",
+        "categories": [
+            "AI",
+            "Collaboration",
+            "Productivity",
+            "Free",
+            "Paid"
+        ]
+    },
+    {
+        "name": "Lastpass",
+        "url": "https://www.lastpass.com/",
+        "description": "Keep your digital life secure and accessible with our tool! Securely store passwords, logins, and records across all your devices for seamless access to favorite sites.",
+        "image": "https://i.imgur.com/4E5t4p2.png",
+        "categories": [
+            "Miscellaneous",
+            "Free",
+            "Paid"
+        ]
+    },
+    {
+        "name": "Vocal Remover",
+        "url": "Vocalremover.org",
+        "description": "Unlock the power of AI to seamlessly separate vocals from music in any song. Experience the magic of sound manipulation, free and at your fingertips!",
+        "image": "https://i.imgur.com/zWw2ejA.png",
+        "categories": [
+            "AI",
+            "Audio",
+            "Free"
+        ]
+    },
+    {
+        "name": "Ninite",
+        "url": "https://ninite.com/",
+        "description": "Ninite: A smart package manager for Windows, auto-installing your favorite apps in a single, custom bundle. Hassle-free setup made easy!",
+        "image": "https://i.imgur.com/mDUKD9D.png",
+        "categories": [
+            "Miscellaneous",
+            "Free"
+        ]
+    },
+    {
+        "name": "Rocket Chat",
+        "url": "https://www.rocket.chat/",
+        "description": "Experience limitless communication with Rocket.Chat! Enjoy unparalleled customization and control as you collaborate with colleagues, clients, and communities daily.",
+        "image": "https://i.imgur.com/ami7ViP.png",
+        "categories": [
+            "Collaboration",
+            "Free",
+            "Productivity"
+        ]
+    },
+    {
+        "name": "Hubstaff",
+        "url": "https://hubstaff.com/",
+        "description": "Boost your team's productivity with our app! It's your one-stop solution for automated time-tracking, streamlined workforce management, and productivity analytics.",
+        "image": "https://i.imgur.com/3cKZ4gu.png",
+        "categories": [
+            "Collaboration",
+            "Productivity",
+            "Free",
+            "Paid"
+        ]
+    },
+    {
+        "name": "Evernote",
+        "url": "https://evernote.com/",
+        "description": "Get organized, manage your personal agenda, or enhance workplace efficiency with Evernote. With tailored plans to suit your needs, productivity is just a click away!",
+        "image": "https://i.imgur.com/0NtaT5Z.png",
+        "categories": [
+            "Collaboration",
+            "Productivity",
+            "Free"
+        ]
+    },
+    {
+        "name": "Grammarly",
+        "url": "https://www.grammarly.com/",
+        "description": "Grammarly empowers 30M+ users and 50K+ teams daily with AI-driven, real-time writing guidance. Elevate your English communication skills efficiently and confidently.",
+        "image": "https://i.imgur.com/op5qGKQ.png",
+        "categories": [
+            "Productivity",
+            "Free",
+            "Paid"
+        ]
+    },
+    {
+        "name": "Notion",
+        "url": "https://www.notion.so/",
+        "description": "Boost efficiency by centralizing your workspace with Notion. Say goodbye to disarray and slow pace. Welcome streamlined knowledge management for swift, decisive action!",
+        "image": "https://i.imgur.com/Pw896M4.jpeg",
+        "categories": [
+            "AI",
+            "Collaboration",
+            "Productivity",
+            "Free",
+            "Paid"
+        ]
+    },
+    {
+        "name": "WeTransfer",
+        "url": "https://wetransfer.com/",
+        "description": "Send big files effortlessly with WeTransfer. Whether for fun or client work, keep your creative projects flowing smoothly. WeTransfer: Moving creativity forward!",
+        "image": "https://i.imgur.com/Pw896M4.jpeg",
+        "categories": [
+            "Miscellaneous",
+            "Free",
+            "Paid"
+        ]
+    },
+    {
+        "name": "TinyWow",
+        "url": "https://tinywow.com/",
+        "description": "Discover TinyWow's free online suite for diverse file tasks, including PDF conversions. For your peace of mind, all files are deleted securely 1-hour post-processing.",
+        "image": "https://i.imgur.com/mihhne1.png",
+        "categories": [
+            "AI",
+            "Miscellaneous",
+            "Free"
+        ]
+    },
+    {
+        "name": "No Code",
+        "url": "https://www.nocode.mba/ai-projects",
+        "description": "Dive into our premium step-by-step courses and start building real-world apps and websites using no-code tools. Transform ideas into reality, no coding required!",
+        "image": "https://i.imgur.com/9Z0l5VQ.png",
+        "categories": [
+            "AI",
+            "Educational",
+            "Free",
+            "Paid"
+        ]
+    },
+    {
+        "name": "CareerHub AI",
+        "url": "https://careerhub-ai.com/",
+        "description": "Empower your career journey! Find your path, get tailored advice, gauge your market worth, create impactful cover letters, and prep for interviews.",
+        "image": "https://i.imgur.com/eSzS2wX.png",
+        "categories": [
+            "AI",
+            "Educational",
+            "Jobs",
+            "Free"
+        ]
+    },
+    {
+        "name": "Jobscan",
+        "url": "https://www.jobscan.co/",
+        "description": "Revamp your resume with Jobscan! Optimize for any position, highlighting crucial experience and skills that recruiters seek. Your gateway to a standout resume!",
+        "image": "https://i.imgur.com/wFw5mWz.png",
+        "categories": [
+            "AI",
+            "Jobs",
+            "Paid"
+        ]
+    },
+    {
+        "name": "WonsultingAI",
+        "url": "https://www.wonsulting.ai/",
+        "description": "Achieve more with our AI-powered job search suite! Optimize resumes, enhance cover letters, network smartly. Fast-track your career growth like never before!",
+        "image": "https://i.imgur.com/ibyeqwW.png",
+        "categories": [
+            "AI",
+            "Jobs",
+            "Free"
+        ]
+    },
+    {
+        "name": "Durable",
+        "url": "https://durable.co/",
+        "description": "Experience the AI website builder that crafts a complete website, infused with images and copy, in mere seconds. Revolutionizing web design at lightning speed!",
+        "image": "https://i.imgur.com/6ApZWae.png",
+        "categories": [
+            "AI",
+            "Design",
+            "Paid"
+        ]
+    },
+    {
+        "name": "10Web",
+        "url": "https://10web.io/",
+        "description": "Accelerate your website creation journey with AI! Build or recreate any website in minutes. Harness the power of AI to bring your digital vision to life swiftly!",
+        "image": "https://i.imgur.com/xAeL6jD.png",
+        "categories": [
+            "AI",
+            "Design",
+            "Paid"
+        ]
+    },
+    {
+        "name": "CommandBar",
+        "url": "https://helphub.commandbar.com/",
+        "description": "Leverage HelpHub's capabilities to train a custom AI-powered chatbot using your content. Streamline customer interactions with your bespoke automated assistant!",
+        "image": "https://i.imgur.com/9JzRDH4.png",
+        "categories": [
+            "AI",
+            "Miscellaneous",
+            "Free",
+            "Paid"
+        ]
+    },
+    {
+        "name": "UseChatGPT AI",
+        "url": "https://www.usechatgpt.ai/",
+        "description": "Unleash the power of ChatGPT, Bard, Bing Chat & Claude on any website! Write, rewrite, summarize, translate, explain, or reply to text anywhere with just a click!",
+        "image": "https://i.imgur.com/c5gdCCc.png",
+        "categories": [
+            "AI",
+            "Free"
+        ]
+    },
+    {
+        "name": "Glasp",
+        "url": "https://glasp.co/",
+        "description": "Annotate as you read, creating a personalized library of knowledge. Highlight and note important points for a richer learning experience tailored to your needs!",
+        "image": "https://i.imgur.com/UlIISyD.png",
+        "categories": [
+            "Productivity",
+            "Free"
+        ]
+    },
+    {
+        "name": "SciSpace Copilot",
+        "url": "https://typeset.io/",
+        "description": "Unlock science comprehension with SciSpace Copilot! Navigate papers, grasp complex topics, review relevant literature quickly, and interact with authors.",
+        "image": "https://i.imgur.com/Iq0Rj3J.jpeg",
+        "categories": [
+            "Educational",
+            "Free"
+        ]
+    },
+    {
+        "name": "Tldv",
+        "url": "https://tldv.io/",
+        "description": "Never miss a detail with our meeting recorder! Transcribe and summarize calls with customers, prospects, and teams, ensuring all vital points are captured.",
+        "image": "https://i.imgur.com/dDneqda.png",
+        "categories": [
+            "AI",
+            "Free",
+            "Productivity",
+            "Paid"
+        ]
+    },
+    {
+        "name": "colour contrast",
+        "url": "Colour Contrast Analyzer - TPGi",
+        "description": "colour contrast checker to optimize your content - including text and visual elements - for individuals with color-blindness or low vision impairments.",
+        "image": "",
+        "categories": [
+            "Accessibility"
+        ]
+    },
+    {
+        "name": "AbilityNet",
+        "url": "https://abilitynet.org.uk",
+        "description": "Guest blog: How to check your brand's colour contrast for accessibility | AbilityNet",
+        "image": "https://imgur.com/a/dbknkpc",
+        "categories": [
+            "Accessibility"
+        ]
+    }
+]

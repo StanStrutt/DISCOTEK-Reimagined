@@ -1,0 +1,164 @@
+.featured {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 90vh;
+    width: 90vw;
+    margin: 5vh 5vw;
+}
+
+.left-featured {
+    z-index: 2;
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    justify-content: flex-start;
+    background: url(https://discotek.net/assets/1.png);
+    background-size: cover;
+    background-position: center;
+    border-radius: 15px;
+    border-color: transparent;
+    height: 90vh;
+    width: 44vw;
+}
+
+.slider {
+    z-index: -1;
+    position: absolute;
+    width: 44vw;
+    height: auto;
+    transition: 0.25s;
+    transition-timing-function: ease-out;
+}
+
+.over-image {
+    z-index: -2;
+    position: absolute;
+    background: url(https://discotek.net/assets/2.png);
+    background-size: auto 90vh;
+    background-position: center top;
+    border-radius: 15px;
+    border-color: transparent;
+    height: 50vh;
+    width: 44vw;
+    transition: 0.25s;
+    transition-timing-function: ease-out;
+}
+
+.left-featured-text {
+    position: absolute;
+    bottom: 0;
+}
+
+.left-featured-text h3 {
+    font-size: 24px;
+    margin: 0 0 10px 30px;
+}
+
+.left-featured-text p {
+    width: 21.25vw;
+    font-size: 16px;
+    margin: 0 0 10px 30px;
+}
+
+.left-featured-text a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    font-family: "Nunito Sans";
+    background: #F0F0F0;
+    border-radius: 10px;
+    border-color: transparent;
+    color: black;
+    height: 40px;
+    width: 100px;
+    margin: 0 0 30px 30px;
+    text-decoration: none;
+}
+
+.right-featured {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 90vh;
+    width: 44vw;
+}
+
+.top-featured {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    background: url(https://discotek.net/assets/3.png);
+    background-size: cover;
+    border-radius: 15px;
+    border-color: transparent;
+    height: 34vh;
+    width: 44vw;
+}
+
+.top-featured h3 {
+    font-size: 24px;
+    margin: 0 0 10px 30px;
+}
+
+.top-featured p {
+    width: 21.25vw;
+    font-size: 16px;
+    margin: 0 0 10px 30px;
+}
+
+.top-featured a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    font-family: "Nunito Sans";
+    background: #F0F0F0;
+    border-radius: 10px;
+    border-color: transparent;
+    color: black;
+    height: 40px;
+    width: 100px;
+    margin: 0 0 30px 30px;
+    text-decoration: none;
+}
+
+.bottom-featured {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    background: url(https://discotek.net/assets/4.png);
+    background-size: cover;
+    border-radius: 15px;
+    border-color: transparent;
+    height: 53vh;
+    width: 44vw;
+}
+
+.bottom-featured h3 {
+    font-size: 24px;
+    margin: 0 0 10px 30px;
+}
+
+.bottom-featured p {
+    width: 21.25vw;
+    font-size: 16px;
+    margin: 0 0 10px 30px;
+}
+
+.bottom-featured a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    font-family: "Nunito Sans";
+    background: #F0F0F0;
+    border-radius: 10px;
+    border-color: transparent;
+    color: black;
+    height: 40px;
+    width: 100px;
+    margin: 0 0 30px 30px;
+    text-decoration: none;
+}
