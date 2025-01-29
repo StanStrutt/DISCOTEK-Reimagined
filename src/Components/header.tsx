@@ -1,6 +1,27 @@
 import "./header.css"
 
 export default function Header() {
+
+    const scrollDown = () => {
+        window.scrollTo({
+            top: 800,
+            left: 0,
+            behavior: "smooth"
+        })
+      }
+
+    //   useEffect(() => {
+    //     if (filteredResults) {
+    //         setTimeout(() => {
+    //           window.scrollTo({
+    //             top: window.innerHeight + 1,
+    //             left: 0,
+    //             behaviour: "smooth"})
+    //         }, 800);
+    //       } 
+    //     }, [filteredResults]);
+
+
     return(
         <div className='header'>
             <div className='banner'>
@@ -36,7 +57,7 @@ export default function Header() {
             </div>
             <div className='bottom-bar'>
             <a>
-                <img className='scroll' src='https://discotek.net/assets/scroll.png' alt='scroll button'/>
+                <img className='scroll' onClick={scrollDown} src='https://discotek.net/assets/scroll.png' alt='scroll button'/>
             </a>
         </div>
       </div>

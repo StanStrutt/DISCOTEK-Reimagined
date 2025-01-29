@@ -27,6 +27,7 @@
     position: absolute;
     width: 44vw;
     height: auto;
+    transform: translateY(47.5vh);
     transition: 0.25s;
     transition-timing-function: ease-out;
 }
