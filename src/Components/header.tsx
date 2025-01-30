@@ -4,7 +4,7 @@ export default function Header() {
 
     const scrollDown = () => {
         window.scrollTo({
-            top: 800,
+            top: window.innerHeight + 1,
             left: 0,
             behavior: "smooth"
         })
