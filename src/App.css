@@ -23,3 +23,7 @@ body {
   border-radius: 10px;
   border-color: transparent;
 }
+
+h2 {
+  margin: 0;
+}

@@ -2,25 +2,13 @@ import "./header.css"
 
 export default function Header() {
 
-    const scrollDown = () => {
+    const scrollDown = () => {      //Button in the header to go down to the featured sections
         window.scrollTo({
             top: window.innerHeight + 1,
             left: 0,
             behavior: "smooth"
         })
       }
-
-    //   useEffect(() => {
-    //     if (filteredResults) {
-    //         setTimeout(() => {
-    //           window.scrollTo({
-    //             top: window.innerHeight + 1,
-    //             left: 0,
-    //             behaviour: "smooth"})
-    //         }, 800);
-    //       } 
-    //     }, [filteredResults]);
-
 
     return(
         <div className='header'>
@@ -57,7 +45,8 @@ export default function Header() {
             </div>
             <div className='bottom-bar'>
             <a>
-                <img className='scroll' onClick={scrollDown} src='https://discotek.net/assets/scroll.png' alt='scroll button'/>
+                <img className='scroll' onClick={scrollDown} /* Application of the scrolldown function and applied to a button */ 
+                src='https://discotek.net/assets/scroll.png' alt='scroll button'/>
             </a>
         </div>
       </div>
