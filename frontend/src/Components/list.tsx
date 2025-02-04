@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import "./list.css"
 import resources from "../resources.json"
+import axios from "axios"
 
 interface Resources {
     name: string;
@@ -11,6 +12,22 @@ interface Resources {
 }
 
 export default function List() { 
+
+    const [data, setData] = useState([])
+    const [error, setError] = useState<string>("")
+
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const response = await axios.get(`/resources`)
+                setData(response.data)
+            } catch (err: unknown) {
+                if (err) {
+                
+            }
+        }
+        fetchData()
+    }, [])
 
     const [topic, setTopic] = useState<string>("")
     const [filtered, setFiltered] = useState<Resources[]>(resources) 

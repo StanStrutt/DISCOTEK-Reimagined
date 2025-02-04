@@ -171,8 +171,7 @@
         "categories": [
             "Videography",
             "Free",
-            "Audio",
-            ""
+            "Audio"
         ]
     },
     {
@@ -262,8 +261,7 @@
         "categories": [
             "Design",
             "Free",
-            "Paid",
-            ""
+            "Paid"
         ]
     },
     {
@@ -1380,7 +1378,7 @@
             "Educational",
             "Free"
         ]
-    },
+    },      
     {
         "name": "Tldv",
         "url": "https://tldv.io/",
