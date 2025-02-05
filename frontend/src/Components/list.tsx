@@ -1,51 +1,11 @@
-import { useEffect, useState } from "react"
 import "./list.css"
-import resources from "../resources.json"
-import axios from "axios"
+import Get from "../services/api-calls"
 
-interface Resources {
-    name: string;
-    url: string;
-    description: string;
-    image: string;
-    categories: string[];
-}
 
 export default function List() { 
 
-    const [data, setData] = useState([])
-    const [error, setError] = useState<string>("")
-
-    useEffect(() => {
-        const fetchData = async () => {
-            try {
-                const response = await axios.get(`/resources`)
-                setData(response.data)
-            } catch (err: unknown) {
-                if (err) {
-                
-            }
-        }
-        fetchData()
-    }, [])
-
-    const [topic, setTopic] = useState<string>("")
-    const [filtered, setFiltered] = useState<Resources[]>(resources) 
-
-    const handleTopicClick = (value: string) => {
-        setTopic(value);
-      };
-    useEffect(() => {
-        if (topic) {
-            const filter = resources.filter((resource) => {
-            const topicMatch = resource.categories.includes(topic); 
-            return topicMatch;
-          });
-
-          setFiltered(filter);
-        }
-      }, [topic]);
-
+    const {filteredData, handleTopicClick, error} = Get()
+ 
     return(
         <div className="list-info">
             <div className="list">
@@ -53,7 +13,7 @@ export default function List() {
                 <div className="categories">
                     <div className="cat-list">
                         <div className="cat-column">
-                            <a className="cat-name" onClick={() => handleTopicClick("Accessibility")} >Accessibility</a> {/* different onclicks for each resource */}
+                            <a className="cat-name" onClick={() => handleTopicClick("Accessibility")} >Accessibility</a> 
                             <a className="cat-name" onClick={() => handleTopicClick("AI")} >AI</a>
                             <a className="cat-name" onClick={() => handleTopicClick("Animation")} >Animation</a>
                             <a className="cat-name" onClick={() => handleTopicClick("Audio")} >Audio</a>
@@ -88,7 +48,8 @@ export default function List() {
                 </div>
             </div>   
             <div className="info"> 
-                {filtered.map((resource) => (
+                {error}
+                {filteredData.map((resource) => (
                     <a className="card-link" href={resource.url}>
                         <div className="card-image" style={{background: `url(${resource.image})`}}/>
                         <hr/>
