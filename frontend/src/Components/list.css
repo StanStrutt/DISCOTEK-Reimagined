@@ -46,6 +46,7 @@
     text-decoration: none;
     font-size: 16px;
     font-weight: 700;
+    cursor: pointer;
 }
 
 .cat-name:hover {
@@ -106,4 +107,26 @@
     border: 0;
     height: 2px;
     background-color: #141414;
+}
+
+@media screen and (max-width: 1480px) {
+    .info {
+	    width: 640px;
+	}
+}
+
+@media screen and (max-width: 920px) {
+    .cat-list {
+        width: 100vw;
+	}
+    
+    .info,
+	.card-link {
+		width: 320px;
+	}
+
+    .cat-name {
+		font-size: 12px;
+		padding: 0 0 5px;
+	}
 }

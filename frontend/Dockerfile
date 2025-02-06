@@ -1,19 +1,26 @@
-# Start your image with a node base image
+# Use official Node.js image as base
 FROM node:18-alpine
 
-# The /app directory should act as the main application directory
-WORKDIR /DISCOTEK Reimagined
+# Set working directory
+WORKDIR /frontend
 
-# Copy the app package and package-lock.json file
-COPY package*.json ./
-RUN npm install --only=production
+# Copy package.json and package-lock.json first (for better caching)
+COPY package.json package-lock.json ./
 
-# Copy local directories to the current local directory of our docker image (/app)
-COPY ./src ./src
-COPY ./public ./public
+# Install dependencies
+RUN npm install
 
-# Expose the application port
+# Copy the rest of the application
+COPY . .
+
+# Build the React app
+RUN npm run build
+
+# Install a lightweight HTTP server (optional, but useful)
+RUN npm install -g serve
+
+# Expose the port React will run on
 EXPOSE 3000
 
-# Start the app using serve command
-CMD [ "node", "App.tsx" ]
+# Serve the React app
+CMD ["serve", "-s", "build", "-l", "3000"]

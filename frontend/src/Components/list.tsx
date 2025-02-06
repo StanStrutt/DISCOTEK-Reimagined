@@ -50,7 +50,7 @@ export default function List() {
             <div className="info"> 
                 {error}
                 {filteredData.map((resource) => (
-                    <a className="card-link" href={resource.url}>
+                    <a className="card-link" target="_blank" href={resource.url}>
                         <div className="card-image" style={{background: `url(${resource.image})`}}/>
                         <hr/>
                         <h3 className="card-title" >{resource.name}</h3>
