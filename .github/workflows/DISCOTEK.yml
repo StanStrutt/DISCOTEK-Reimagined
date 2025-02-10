@@ -4,20 +4,23 @@ on: [push]
 
 jobs:
   lint:
-    name: Run linter
     runs-on: ubuntu-latest
 
-steps: 
-  - name: Checkout repository
-    uses: actions/checkout@v4
+    steps: 
+      - name: Checkout repository
+        uses: actions/checkout@v4
 
-  - name: Set up Node.js
-    uses: actions/setup-node@v4
-    with:
-      node-version: 18
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
 
-  - name: Install dependencies
-    run: npm install
+      - name: Install dependencies
+        run: |
+          cd frontend 
+          npm install
 
-  - name: Run Linter
-    run: npm run lint
+      - name: Run Linter
+        run: |
+          cd frontend
+          npm run lint
