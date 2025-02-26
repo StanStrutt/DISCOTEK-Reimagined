@@ -36,7 +36,6 @@
 .cat-column {
     display: flex;
     flex-direction: column;
-    width: 25vw;
 }
 
 .cat-name {
@@ -44,12 +43,22 @@
     text-align: center;
     transition: 0.25s;
     text-decoration: none;
+    font-family: "Nunito Sans";
     font-size: 16px;
     font-weight: 700;
     cursor: pointer;
+    background-color: #141414;
+    border: 0;
+    padding: 0;
+    width: max-content;
+    margin: auto;
 }
 
 .cat-name:hover {
+    color: rgb(173, 75, 232);
+}
+
+.cat-name:focus {
     color: rgb(173, 75, 232);
 }
 
