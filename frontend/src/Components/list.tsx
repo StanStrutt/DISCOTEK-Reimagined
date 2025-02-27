@@ -1,13 +1,12 @@
 import "./list.css"
 import Get from "../services/api-calls"
 
-
 export default function List() { 
 
     const {filteredData, handleTopicClick, error} = Get()
  
     return(
-        <div className="list-info">
+        <div className="list-info" id="Explore">
             <div className="list">
                 <h2>EXPLORE</h2>
                 <div className="categories">

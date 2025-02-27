@@ -59,6 +59,7 @@
   height: 50px;
   width: 125px;
   color: black;
+  cursor: pointer;
 }
 
 .right-gif {

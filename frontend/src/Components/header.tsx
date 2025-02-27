@@ -8,7 +8,15 @@ export default function Header() {
             left: 0,
             behavior: "smooth"
         })
-      }
+    }
+
+    const scrollDownFeatured = () => {
+        window.scrollTo({
+            top: window.innerHeight + window.innerHeight - 50,
+            left: 0,
+            behavior: "smooth"
+        })
+    }
 
     return(
         <div className='header'>
@@ -21,8 +29,8 @@ export default function Header() {
                     <p>DISCoTek is a website which provides hundreds of resources from all over the web from productivity tools to the latest AI.</p>
                     <p>Run by DISC, a specialist college in Manchester for 16 - 25 year olds, which allows young people to progress their career in the digital sector.</p>
                     <div className='front-buttons'>
-                        <a>Explored</a>
-                        <a>Featured</a>
+                        <a onClick={scrollDownFeatured}>Explored</a>
+                        <a onClick={scrollDown}>Featured</a>
                     </div>
                 </div>
                 <div className='right-gif'>

@@ -1,7 +1,7 @@
 import "./featured.css"
 import { useEffect, useRef, useState } from "react";
 
-interface CursorPosition {  // something to do with TypeScript 
+interface CursorPosition {
     x: number;
     y: number;
   }
@@ -10,7 +10,7 @@ interface CursorPosition {  // something to do with TypeScript
 export default function Featured() {
 
   const containerRef = useRef<HTMLDivElement | null>(null); 
-  const [cursorPosition, setCursorPosition] = useState<CursorPosition>({ x: 0, y: 0 });
+  const [cursorPosition, setCursorPosition] = useState<CursorPosition>({ x: 0, y: 450 });
 
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {   // tracking if the mouse is currently hovering the the left image of featured
@@ -19,7 +19,7 @@ export default function Featured() {
       const sliderBound = containerRef.current.getBoundingClientRect();
       const globalCursor = { x: e.clientX, y: e.clientY };
 
-      const sliderCursor = {
+      const sliderCursor: CursorPosition = {
         x: globalCursor.x - sliderBound.left,
         y: globalCursor.y - sliderBound.top,
       };
