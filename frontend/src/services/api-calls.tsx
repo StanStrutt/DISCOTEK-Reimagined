@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import axios from "axios"
 
 interface Resources {
+    _id: string;
     name: string;
     url: string;
     description: string;

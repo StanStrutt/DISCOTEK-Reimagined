@@ -37,6 +37,20 @@ const Router = router()
             res.status(400).json({ error: err.message });
         }
     });
+
+    Router.delete('/delete/:_id', async (req, res) => {
+        try {
+            const resource = await Resource.findOneAndDelete({ _id: req.params._id})
+
+            if (!resource) {
+                return res.status(404).json({ message: "Resource not found" })
+            }
+
+            res.json({ message: "Resource deleted" })
+        } catch (error) {
+            res.status(500).json({ message: "Error" })
+        }
+    })
       
     Router.get('/resources/:id', async (req, res) => {
         try {
