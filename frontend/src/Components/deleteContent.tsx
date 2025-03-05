@@ -20,6 +20,11 @@ export default function DeleteContent() {
             return
         }
     
+
+        const confirmDelete = window.confirm(`Are you sure you want to delete user ${formId._id}?`);
+        if (!confirmDelete) return;
+
+
         try {
             const response = await axios.delete(`http://localhost:5000/delete/${formId._id}`)
         

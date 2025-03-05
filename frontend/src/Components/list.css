@@ -131,6 +131,10 @@
     left: 20px;
 }
 
+.edit-popup {
+
+}
+
 @media screen and (max-width: 1480px) {
     .info {
 	    width: 640px;

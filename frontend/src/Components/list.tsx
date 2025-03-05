@@ -1,9 +1,66 @@
 import "./list.css"
 import Get from "../services/api-calls"
+import UpdateContent from "./updateContent"
+import { useState } from "react"
+import axios from "axios"
 
 export default function List() { 
 
     const {filteredData, handleTopicClick, error} = Get()
+
+    const { handleUpdate, handleSubmit, handleAddCategory, handleChange, categoryInput,  setCategoryInput, formData, setMessage, setFormData } = UpdateContent()
+
+    const [isOpen, setIsOpen] = useState(false)
+    const [id, setId] = useState("")
+    
+    const handleIdClick = async (value: string) => {
+        setId(value);
+        setIsOpen(!isOpen)
+        try {
+            const response = await axios.get(`http://localhost:5000/get/${id}`)
+                setFormData(response.data)
+                setMessage(response.data.message)
+            } catch (err) {
+                if (err instanceof Error) {
+                    setMessage(err.message)
+                } else {
+                    setMessage("Something went wrong")
+                }
+        }
+       };
+
+    //    useEffect(() => {
+    //     if (!id) {
+    //         try {
+    //             const response = axios.get(`http://localhost:5000/get/${formData._id}`)
+    //             setFormData(response.data)
+    //             setMessage(response.data.message)
+    //         } catch (err) {
+    //             if (err instanceof Error) {
+    //             setMessage(err.message)
+    //             } else {
+    //                 setMessage("Something went wrong")
+    //             }
+    //         }}
+    //    })
+
+    const handleGet = async () => {
+        if (!formData._id) {
+            setMessage("Please enter id to get the information")
+            return
+        }
+        try {
+            const response = await axios.get(`http://localhost:5000/get/${formData._id}`)
+            setFormData(response.data)
+            setMessage(response.data.message)
+        } catch (err) {
+            if (err instanceof Error) {
+                setMessage(err.message)
+            } else {
+                setMessage("Something went wrong")
+            }
+        }
+    }
  
     return(
         <div className="list-info" id="Explore">
@@ -45,11 +102,45 @@ export default function List() {
                         </div>
                     </div>
                 </div>
-            </div>   
+            </div>
+            {isOpen && (
+                <div className="edit-popup">
+                    <form onSubmit={handleSubmit} className="Post-form">
+                        <input type="text" name="_id" required value={id} onChange={handleChange} 
+                        />
+                        <button type="button" onClick={handleGet}>GET</button>
+                        <input type="text" name="name" placeholder="Enter name" value={formData.name} onChange={handleChange}
+                        />
+                        <input type="text" name="url" placeholder="Enter url" value={formData.url} onChange={handleChange}
+                        />
+                        <input type="text" name="description" placeholder="Enter description" value={formData.description} onChange={handleChange}
+                        />
+                        <input type="text" name="image" placeholder="Enter image link" value={formData.image} onChange={handleChange}
+                        />
+                        <input
+                            type="text"
+                            name="categories"
+                            placeholder="Enter categories"
+                            value={categoryInput}
+                            onChange={(e) => setCategoryInput(e.target.value)}
+                        />
+                        <button type="button" onClick={handleAddCategory} className="add-cat">Add</button>
+                        {formData.categories.map((categories, index) => (
+                            <span className="Added-cat" key={index}>
+                                <button>X</button>
+                                {categories}
+                            </span>
+                        ))}
+                        <button type="submit" onClick={handleUpdate}>Update</button>
+                    </form>
+                </div>
+            )}
             <div className="info"> 
                 {error}
                 {filteredData.map((resource) => (
                     <div className="card-holder">
+                        <button onClick={() => handleIdClick(resource._id)}>edit</button>
+                        <button>delete</button>
                         <a className="card-link" target="_blank" href={resource.url}>
                             <div className="card-image" style={{background: `url(${resource.image})`}}/>
                             <hr/>

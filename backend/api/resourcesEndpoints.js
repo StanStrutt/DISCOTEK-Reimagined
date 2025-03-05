@@ -38,9 +38,46 @@ const Router = router()
         }
     });
 
+    Router.get('/get/:_id', async (req, res) => {
+        try {
+            const resource = await Resource.findOne({ _id: req.params._id })
+
+            if (!resource) {
+                return res.status(404).json({ message: "Resource not found" })
+            }
+            res.json(resource)
+        } catch (error) {
+            res.status(500).json({ message: "Error fetching resource" })
+        }
+    })
+
+    Router.put('/update/:_id', async (req, res) => {
+        try {
+            const resource = await Resource.findOneAndUpdate(
+                { _id: req.params._id },
+                {
+                    name: req.body.name,
+                    url: req.body.url,
+                    description: req.body.description,
+                    image: req.body.image,
+                    categories: req.body.categories
+                },
+                { new: true }
+            );
+
+            if (!resource) {
+                return res.status(404).json({ message: "Resource not found" })
+            }
+
+            res.json({ message: "Resource updated", Information: resource })
+        } catch (error) {
+            res.status(500).json({ message: "Error" })
+        }
+    })
+
     Router.delete('/delete/:_id', async (req, res) => {
         try {
-            const resource = await Resource.findOneAndDelete({ _id: req.params._id})
+            const resource = await Resource.findOneAndDelete({ _id: req.params._id })
 
             if (!resource) {
                 return res.status(404).json({ message: "Resource not found" })
