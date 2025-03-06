@@ -132,7 +132,15 @@
 }
 
 .edit-popup {
+    position: sticky;
+    top: 0;
+    right: 0;
+    z-index: 10;
+    background-color: aliceblue;
+}
 
+.added-cat{
+    color: #000;
 }
 
 @media screen and (max-width: 1480px) {

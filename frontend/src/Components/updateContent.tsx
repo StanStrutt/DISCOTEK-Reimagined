@@ -26,6 +26,13 @@ export default function UpdateContent() {
             setCategoryInput("")
         }
     }
+
+    const handleDelCategory = (categoryDel: string) => {
+        setFormData({
+            ...formData,
+            categories: formData.categories.filter(category => category !== categoryDel)
+        })
+    }
         
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
@@ -95,7 +102,10 @@ export default function UpdateContent() {
         setCategoryInput,
         formData,
         setFormData,
-        setMessage
+        setMessage,
+        handleDelCategory
+        
+        
         
         // <div className="Form">
         //     <div className="editContent">
