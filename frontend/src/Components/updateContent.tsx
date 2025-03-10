@@ -1,6 +1,7 @@
 import { useState } from "react"
 import axios from "axios"
 
+
 interface AddFormData {
     _id: string;
     name: string;
@@ -15,6 +16,7 @@ export default function UpdateContent() {
     const [formData, setFormData] = useState<AddFormData>({ _id: "", name: "", url: "", description: "", image: "", categories: [] });
     const [categoryInput, setCategoryInput] = useState<string>("");
     const [message, setMessage] = useState<string>("");
+    const [isOpen, setIsOpen] = useState<boolean>(false)
   
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -50,8 +52,8 @@ export default function UpdateContent() {
             } else {
                 setMessage("Something went wrong");
             }
-          }};
-
+          };
+        }
     const handleUpdate = async () => {
         if (!formData._id) {
             setMessage("Please enter an id to update the user.");
@@ -70,29 +72,11 @@ export default function UpdateContent() {
             } else {
                 setMessage("Something went wrong");
             }
-          }};
-      
-
-    const handleGet = async () => {
-        if (!formData._id) {
-            setMessage("Please enter id to get the information")
-            return
+          };
+          setIsOpen(false)
         }
-        try {
-            const response = await axios.get(`http://localhost:5000/get/${formData._id}`)
-
-            setMessage(response.data.message)
-        } catch (err) {
-            if (err instanceof Error) {
-                setMessage(err.message)
-            } else {
-                setMessage("Something went wrong")
-            }
-        }
-    }
-    
+        
     return{
-        handleGet,
         handleUpdate,
         handleSubmit,
         handleAddCategory,
@@ -103,7 +87,9 @@ export default function UpdateContent() {
         formData,
         setFormData,
         setMessage,
-        handleDelCategory
+        handleDelCategory,
+        isOpen,
+        setIsOpen
         
         
         

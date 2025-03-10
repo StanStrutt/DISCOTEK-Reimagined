@@ -124,19 +124,22 @@
     background-color: #141414;
 }
 
-.card_id {
-    position: absolute;
-    bottom: 0;
-    margin: 0 0 1em 0;
-    left: 20px;
+.card-buttons {
+    float: right;
 }
 
 .edit-popup {
-    position: sticky;
+    position: fixed;
     top: 0;
     right: 0;
+    left: 0;
+    margin-left: 20vw;
+    margin-right: 20vw;
+    margin-top: 25vh;
     z-index: 10;
     background-color: aliceblue;
+    border-width: 3px solid;
+    border-radius: 5px;
 }
 
 .added-cat{

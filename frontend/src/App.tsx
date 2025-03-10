@@ -4,7 +4,6 @@ import Featured from './Components/featured'
 import List from "./Components/list"
 import DigitalFooter from './Components/footer'
 import AddContent from './Components/addContent'
-import DeleteContent from './Components/deleteContent'
 
 export default function App() {
   return(
@@ -12,7 +11,6 @@ export default function App() {
       <Header/>
       <Featured/>
       <AddContent/>
-      <DeleteContent/>
       <List/>
       <DigitalFooter/>
     </>

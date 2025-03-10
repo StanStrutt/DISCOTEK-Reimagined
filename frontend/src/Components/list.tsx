@@ -2,16 +2,16 @@ import "./list.css"
 import Get from "../services/api-calls"
 import UpdateContent from "./updateContent"
 import Options from "./options"
-import { useState } from "react"
 import axios from "axios"
+
 
 export default function List() { 
 
     const {filteredData, handleTopicClick, error} = Get()
 
-    const { handleUpdate, handleSubmit, handleAddCategory, handleChange, categoryInput,  setCategoryInput, formData, setMessage, setFormData, handleDelCategory } = UpdateContent()
+    const { handleUpdate, handleSubmit, handleAddCategory, handleChange, categoryInput,  setCategoryInput, formData, setMessage, setFormData, handleDelCategory, isOpen, setIsOpen } = UpdateContent()
 
-    const [isOpen, setIsOpen] = useState(false)
+    
     
     const handleIdClick = async (value: string) => {
         setIsOpen(!isOpen)
@@ -28,38 +28,34 @@ export default function List() {
         }
     };
 
-    //    useEffect(() => {
-    //     if (!id) {
-    //         try {
-    //             const response = axios.get(`http://localhost:5000/get/${formData._id}`)
-    //             setFormData(response.data)
-    //             setMessage(response.data.message)
-    //         } catch (err) {
-    //             if (err instanceof Error) {
-    //             setMessage(err.message)
-    //             } else {
-    //                 setMessage("Something went wrong")
-    //             }
-    //         }}
-    //    })
+    const handleIdDelete = async (value: string) => {
+        try {
+            const response = await axios.get(`http://localhost:5000/get/${value}`)
+                setFormData(response.data)
+                setMessage(response.data.message)
+            } catch (err) {
+                if (err instanceof Error) {
+                    setMessage(err.message)
+                } else {
+                    setMessage("Something went wrong")
+                }
+        }
+        
+        const confirmDelete = window.confirm(`Are you sure you want to delete this?`);
+        if (!confirmDelete) return;
 
-    // const handleGet = async () => {
-    //     if (!formData._id) {
-    //         setMessage("Please enter id to get the information")
-    //         return
-    //     }
-    //     try {
-    //         const response = await axios.get(`http://localhost:5000/get/${formData._id}`)
-    //         setFormData(response.data)
-    //         setMessage(response.data.message)
-    //     } catch (err) {
-    //         if (err instanceof Error) {
-    //             setMessage(err.message)
-    //         } else {
-    //             setMessage("Something went wrong")
-    //         }
-    //     }
-    // }
+        try {
+            const response = await axios.delete(`http://localhost:5000/delete/${value}`)
+                setFormData(response.data)
+                setMessage(response.data.message)
+            } catch (err) {
+                if (err instanceof Error) {
+                    setMessage(err.message)
+                } else {
+                    setMessage("Something went wrong")
+                }
+        }
+    };
  
     return(
         <div className="list-info" id="Explore">
@@ -105,6 +101,7 @@ export default function List() {
             {isOpen && (
                 <div className="edit-popup">
                     <form onSubmit={handleSubmit} className="Post-form">
+                        <button type="button" onClick={() => setIsOpen(false)}>X</button>
                         <input type="text" name="name" placeholder="Enter name" value={formData.name} onChange={handleChange}
                         />
                         <input type="text" name="url" placeholder="Enter url" value={formData.url} onChange={handleChange}
@@ -132,13 +129,19 @@ export default function List() {
                 {error}
                 {filteredData.map((resource) => (
                     <div className="card-holder">
-                        <button onClick={() => handleIdClick(resource._id)}>edit</button>
-                        <button>delete</button>
+                        <div className="card-buttons">
+                            <button onClick={() => handleIdDelete(resource._id)}>
+                                <img src="https://cdn-icons-png.flaticon.com/512/484/484662.png" height="20px"/>
+                            </button>
+                            <button onClick={() => handleIdClick(resource._id)}>
+                                <img src="https://static.thenounproject.com/png/3406050-200.png" height="20px"/>
+                            </button>
+                        </div>
                         <a className="card-link" target="_blank" href={resource.url}>
                             <div className="card-image" style={{background: `url(${resource.image})`}}/>
                             <hr/>
                             <h3 className="card-title" >{resource.name}</h3>
-                            <p className="card-desc" >{resource.description}</p>                           
+                            <p className="card-desc" >{resource.description}</p>                         
                         </a>
                     </div>
                 ))}
