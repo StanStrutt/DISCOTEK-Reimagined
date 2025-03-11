@@ -130,20 +130,79 @@
 
 .edit-popup {
     position: fixed;
-    top: 0;
-    right: 0;
-    left: 0;
-    margin-left: 20vw;
-    margin-right: 20vw;
-    margin-top: 25vh;
+    top: 50%;
+    left: 50%;
     z-index: 10;
     background-color: aliceblue;
-    border-width: 3px solid;
     border-radius: 5px;
+    transform: translate(-50%, -50%);
+}
+
+.add-cat {
+    width: 100px;
+    margin-left: 20px;
+    height: 40px;
 }
 
 .added-cat{
     color: #000;
+    margin: 0 0 10px 10px;
+}
+
+.Post-form {
+    display: flex;
+    flex-direction: column;
+    margin: 35px;
+}
+
+.Post-form > input {
+    margin: 1rem 0 1rem 0;
+    height: 2rem;
+}
+
+.Post-form > button {
+    margin: 1rem 0 1rem 0;
+    height: 2rem;
+}
+
+.close-pop {
+    width: 35px;
+    padding: 0;
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0 !important;
+    border: 0;
+}
+
+.close-pop:hover {
+    background-color: red;
+    color: #fff;
+}
+
+.submit-button {
+    display: flex;
+}
+
+.submit-button button {
+    width: 50%;
+}
+
+.category-section {
+    display: flex;
+    
+}
+
+.categories-select {
+    height: 40px;
+    width: 150px;
+    text-align: center;
+}
+
+.current-cats {
+    display: flex;
+    flex-direction: column;
+    margin: 0 0 10px 10px;
 }
 
 @media screen and (max-width: 1480px) {

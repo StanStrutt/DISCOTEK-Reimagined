@@ -101,7 +101,7 @@ export default function List() {
             {isOpen && (
                 <div className="edit-popup">
                     <form onSubmit={handleSubmit} className="Post-form">
-                        <button type="button" onClick={() => setIsOpen(false)}>X</button>
+                        <button className="close-pop" type="button" onClick={() => setIsOpen(false)}>X</button>
                         <input type="text" name="name" placeholder="Enter name" value={formData.name} onChange={handleChange}
                         />
                         <input type="text" name="url" placeholder="Enter url" value={formData.url} onChange={handleChange}
@@ -110,18 +110,24 @@ export default function List() {
                         />
                         <input type="text" name="image" placeholder="Enter image link" value={formData.image} onChange={handleChange}
                         />
-                        <select name="categories" value={categoryInput} onChange={(e) => setCategoryInput(e.target.value)}>
-                            <option hidden selected value="">Enter Catergories</option>
-                            <Options/>
-                        </select>
-                        <button type="button" onClick={handleAddCategory} className="add-cat">Add</button>
-                        {formData.categories.map((categories, index) => (
-                            <span className="added-cat" key={index}>
-                                <button onClick={() => handleDelCategory(categories)}>X</button>
-                                {categories}
-                            </span>
-                        ))}
-                        <button type="submit" onClick={handleUpdate}>Update</button>
+                        <div className="category-section">
+                            <select className="categories-select" name="categories" value={categoryInput} onChange={(e) => setCategoryInput(e.target.value)}>
+                                <option hidden selected value="">Enter Catergories</option>
+                                <Options/>
+                            </select>
+                            <button type="button" onClick={handleAddCategory} className="add-cat">Add</button>
+                            <div className="current-cats">
+                                {formData.categories.map((categories, index) => (
+                                    <span className="added-cat" key={index}>
+                                        <button className="delete-cat" onClick={() => handleDelCategory(categories)}>X</button>
+                                        {categories}
+                                    </span>
+                                ))}
+                            </div>
+                        </div>
+                        <div className="submit-button">
+                            <button type="submit" onClick={handleUpdate}>Update</button>
+                        </div>
                     </form>
                 </div>
             )}
@@ -130,11 +136,11 @@ export default function List() {
                 {filteredData.map((resource) => (
                     <div className="card-holder">
                         <div className="card-buttons">
-                            <button onClick={() => handleIdDelete(resource._id)}>
-                                <img src="https://cdn-icons-png.flaticon.com/512/484/484662.png" height="20px"/>
-                            </button>
                             <button onClick={() => handleIdClick(resource._id)}>
                                 <img src="https://static.thenounproject.com/png/3406050-200.png" height="20px"/>
+                            </button>
+                            <button onClick={() => handleIdDelete(resource._id)}>
+                                <img src="https://cdn-icons-png.flaticon.com/512/484/484662.png" height="20px"/>
                             </button>
                         </div>
                         <a className="card-link" target="_blank" href={resource.url}>

@@ -1,28 +1,8 @@
 
-
 .editContent {
     margin: 0 20vw 0 20vw;
 }
 
 .editContent h2 {
     text-align: center;
-}
-
-.Post-form {
-    display: flex;
-    flex-direction: column;
-}
-
-.Post-form > input {
-    margin: 1rem 0 1rem 0;
-    height: 2rem;
-}
-
-.Post-form > button {
-    margin: 1rem 0 1rem 0;
-    height: 2rem;
-}
-
-.Added-cat {
-    margin: 0 10px 0 10px ;
 }
