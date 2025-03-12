@@ -1,8 +1,8 @@
 import "./list.css"
 import Get from "../services/api-calls"
 import UpdateContent from "./updateContent"
-import Options from "./options"
 import axios from "axios"
+import { useState, useEffect } from "react"
 
 
 export default function List() { 
@@ -11,7 +11,15 @@ export default function List() {
 
     const { handleUpdate, handleSubmit, handleAddCategory, handleChange, categoryInput,  setCategoryInput, formData, setMessage, setFormData, handleDelCategory, isOpen, setIsOpen } = UpdateContent()
 
+    const [className, setClassName] = useState<string>()
     
+    useEffect(() => {
+        if (isOpen) {
+            setClassName("list-info-blur")
+        } else {
+            setClassName("list-info")
+        }
+    }, [isOpen])
     
     const handleIdClick = async (value: string) => {
         setIsOpen(!isOpen)
@@ -58,46 +66,7 @@ export default function List() {
     };
  
     return(
-        <div className="list-info" id="Explore">
-            <div className="list">
-                <h2>EXPLORE</h2>
-                <div className="categories">
-                    <div className="cat-list">
-                        <div className="cat-column">
-                            <button className="cat-name" onClick={() => handleTopicClick("Accessibility")} >Accessibility</button> 
-                            <button className="cat-name" onClick={() => handleTopicClick("AI")} >AI</button>
-                            <button className="cat-name" onClick={() => handleTopicClick("Animation")} >Animation</button>
-                            <button className="cat-name" onClick={() => handleTopicClick("Audio")} >Audio</button>
-                            <button className="cat-name" onClick={() => handleTopicClick("Blogging")} >Blogging</button>
-                            <button className="cat-name" onClick={() => handleTopicClick("Colour")} >Colour</button>
-                        </div>
-                        <div className="cat-column">
-                            <button className="cat-name" onClick={() => handleTopicClick("Collaboration")} >Collaboration</button>
-                            <button className="cat-name" onClick={() => handleTopicClick("Design")} >Design</button>
-                            <button className="cat-name" onClick={() => handleTopicClick("Development")} >Development</button>
-                            <button className="cat-name" onClick={() => handleTopicClick("Editing")} >Editing</button>
-                            <button className="cat-name" onClick={() => handleTopicClick("Educational")} >Educational</button>
-                            <button className="cat-name" onClick={() => handleTopicClick("Fonts")} >Fonts</button>
-                        </div>
-                        <div className="cat-column">
-                            <button className="cat-name" onClick={() => handleTopicClick("Illustration")} >Illustration</button>
-                            <button className="cat-name" onClick={() => handleTopicClick("Inspiration")} >Inspiration</button>
-                            <button className="cat-name" onClick={() => handleTopicClick("Icons")} >Icons</button>
-                            <button className="cat-name" onClick={() => handleTopicClick("Jobs")} >Jobs</button>
-                            <button className="cat-name" onClick={() => handleTopicClick("Miscellaneous")} >Miscellaneous</button>
-                            <button className="cat-name" onClick={() => handleTopicClick("Podcasting")} >Podcasting</button>
-                        </div>
-                        <div className="cat-column">
-                            <button className="cat-name" onClick={() => handleTopicClick("Productivity")} >Productivity</button>
-                            <button className="cat-name" onClick={() => handleTopicClick("Stock Images")} >Stock Images</button>
-                            <button className="cat-name" onClick={() => handleTopicClick("Stock Videos")} >Stock Videos</button>
-                            <button className="cat-name" onClick={() => handleTopicClick("Free")} >Free</button>
-                            <button className="cat-name" onClick={() => handleTopicClick("Free Trial")} >Free Trial</button>
-                            <button className="cat-name" onClick={() => handleTopicClick("Paid")} >Paid</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <>
             {isOpen && (
                 <div className="edit-popup">
                     <form onSubmit={handleSubmit} className="Post-form">
@@ -113,7 +82,30 @@ export default function List() {
                         <div className="category-section">
                             <select className="categories-select" name="categories" value={categoryInput} onChange={(e) => setCategoryInput(e.target.value)}>
                                 <option hidden selected value="">Enter Catergories</option>
-                                <Options/>
+                                <option value="Accessibility">Accessibility</option>
+                            <option value="AI">AI</option>
+                            <option value="Animation">Animation</option>
+                            <option value="Audio">Audio</option>
+                            <option value="Blogging">Blogging</option>
+                            <option value="Colour">Colour</option>
+                            <option value="Collaboration">Collaboration</option>
+                            <option value="Design">Design</option>
+                            <option value="Development">Development</option>
+                            <option value="Editing">Editing</option>
+                            <option value="Educational">Educational</option>
+                            <option value="Fonts">Fonts</option>
+                            <option value="Illustration">Illustration</option>
+                            <option value="Inspiration">Inspiration</option>
+                            <option value="Icons">Icons</option>
+                            <option value="Jobs">Jobs</option>
+                            <option value="Miscellaneous">Miscellaneous</option>
+                            <option value="Podcasting">Podcasting</option>
+                            <option value="Productivity">Productivity</option>
+                            <option value="Stock Images">Stock Images</option>
+                            <option value="Stock Videos">Stock Videos</option>
+                            <option value="Free">Free</option>
+                            <option value="Free Trial">Free Trial</option>
+                            <option value="Paid">Paid</option>
                             </select>
                             <button type="button" onClick={handleAddCategory} className="add-cat">Add</button>
                             <div className="current-cats">
@@ -131,27 +123,68 @@ export default function List() {
                     </form>
                 </div>
             )}
-            <div className="info"> 
-                {error}
-                {filteredData.map((resource) => (
-                    <div className="card-holder">
-                        <div className="card-buttons">
-                            <button onClick={() => handleIdClick(resource._id)}>
-                                <img src="https://static.thenounproject.com/png/3406050-200.png" height="20px"/>
-                            </button>
-                            <button onClick={() => handleIdDelete(resource._id)}>
-                                <img src="https://cdn-icons-png.flaticon.com/512/484/484662.png" height="20px"/>
-                            </button>
+            <div className={className} id="Explore">
+                <div className="list">
+                    <h2>EXPLORE</h2>
+                    <div className="categories">
+                        <div className="cat-list">
+                            <div className="cat-column">
+                                <button className="cat-name" onClick={() => handleTopicClick("Accessibility")}>Accessibility</button> 
+                                <button className="cat-name" onClick={() => handleTopicClick("AI")}>AI</button>
+                                <button className="cat-name" onClick={() => handleTopicClick("Animation")}>Animation</button>
+                                <button className="cat-name" onClick={() => handleTopicClick("Audio")}>Audio</button>
+                                <button className="cat-name" onClick={() => handleTopicClick("Blogging")}>Blogging</button>
+                                <button className="cat-name" onClick={() => handleTopicClick("Colour")}>Colour</button>
+                            </div>
+                            <div className="cat-column">
+                                <button className="cat-name" onClick={() => handleTopicClick("Collaboration")}>Collaboration</button>
+                                <button className="cat-name" onClick={() => handleTopicClick("Design")}>Design</button>
+                                <button className="cat-name" onClick={() => handleTopicClick("Development")}>Development</button>
+                                <button className="cat-name" onClick={() => handleTopicClick("Editing")}>Editing</button>
+                                <button className="cat-name" onClick={() => handleTopicClick("Educational")}>Educational</button>
+                                <button className="cat-name" onClick={() => handleTopicClick("Fonts")}>Fonts</button>
+                            </div>
+                            <div className="cat-column">
+                                <button className="cat-name" onClick={() => handleTopicClick("Illustration")}>Illustration</button>
+                                <button className="cat-name" onClick={() => handleTopicClick("Inspiration")}>Inspiration</button>
+                                <button className="cat-name" onClick={() => handleTopicClick("Icons")}>Icons</button>
+                                <button className="cat-name" onClick={() => handleTopicClick("Jobs")}>Jobs</button>
+                                <button className="cat-name" onClick={() => handleTopicClick("Miscellaneous")}>Miscellaneous</button>
+                                <button className="cat-name" onClick={() => handleTopicClick("Podcasting")}>Podcasting</button>
+                            </div>
+                            <div className="cat-column">
+                                <button className="cat-name" onClick={() => handleTopicClick("Productivity")}>Productivity</button>
+                                <button className="cat-name" onClick={() => handleTopicClick("Stock Images")}>Stock Images</button>
+                                <button className="cat-name" onClick={() => handleTopicClick("Stock Videos")}>Stock Videos</button>
+                                <button className="cat-name" onClick={() => handleTopicClick("Free")}>Free</button>
+                                <button className="cat-name" onClick={() => handleTopicClick("Free Trial")}>Free Trial</button>
+                                <button className="cat-name" onClick={() => handleTopicClick("Paid")}>Paid</button>
+                            </div>
                         </div>
-                        <a className="card-link" target="_blank" href={resource.url}>
-                            <div className="card-image" style={{background: `url(${resource.image})`}}/>
-                            <hr/>
-                            <h3 className="card-title" >{resource.name}</h3>
-                            <p className="card-desc" >{resource.description}</p>                         
-                        </a>
                     </div>
-                ))}
-            </div>               
-        </div>
+                </div>
+                <div className="info"> 
+                    {error}
+                    {filteredData.map((resource) => (
+                        <div className="card-holder">
+                            <div className="card-buttons">
+                                <button onClick={() => handleIdClick(resource._id)}>
+                                    <img src="https://static.thenounproject.com/png/3406050-200.png" height="20px"/>
+                                </button>
+                                <button onClick={() => handleIdDelete(resource._id)}>
+                                    <img src="https://cdn-icons-png.flaticon.com/512/484/484662.png" height="20px"/>
+                                </button>
+                            </div>
+                            <a className="card-link" target="_blank" href={resource.url}>
+                                <div className="card-image" style={{background: `url(${resource.image})`}}/>
+                                <hr/>
+                                <h3 className="card-title" >{resource.name}</h3>
+                                <p className="card-desc" >{resource.description}</p>                         
+                            </a>
+                        </div>
+                    ))}
+                </div>               
+            </div>
+        </>
     )
 }

@@ -7,6 +7,16 @@
     width: 100%;
 }
 
+.list-info-blur {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: auto;
+    width: 100%;
+    filter: blur(8px);
+}
+
 .list-info h2 {
     font-size: 36px;
     color: #F0F0F0;

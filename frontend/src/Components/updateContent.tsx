@@ -54,6 +54,7 @@ export default function UpdateContent() {
             }
           };
         }
+        
     const handleUpdate = async () => {
         if (!formData._id) {
             setMessage("Please enter an id to update the user.");
