@@ -9,7 +9,7 @@ export default function List() {
 
     const {filteredData, handleTopicClick, error} = Get()
 
-    const { handleUpdate, handleSubmit, handleAddCategory, handleChange, categoryInput,  setCategoryInput, formData, setMessage, setFormData, handleDelCategory, isOpen, setIsOpen } = UpdateContent()
+    const {handleUpdate, handleSubmit, handleAddCategory, handleChange, categoryInput,  setCategoryInput, formData, setMessage, setFormData, handleDelCategory, isOpen, setIsOpen} = UpdateContent()
 
     const [className, setClassName] = useState<string>()
     
@@ -64,7 +64,7 @@ export default function List() {
                 }
         }
     };
- 
+
     return(
         <>
             {isOpen && (
@@ -83,29 +83,29 @@ export default function List() {
                             <select className="categories-select" name="categories" value={categoryInput} onChange={(e) => setCategoryInput(e.target.value)}>
                                 <option hidden selected value="">Enter Catergories</option>
                                 <option value="Accessibility">Accessibility</option>
-                            <option value="AI">AI</option>
-                            <option value="Animation">Animation</option>
-                            <option value="Audio">Audio</option>
-                            <option value="Blogging">Blogging</option>
-                            <option value="Colour">Colour</option>
-                            <option value="Collaboration">Collaboration</option>
-                            <option value="Design">Design</option>
-                            <option value="Development">Development</option>
-                            <option value="Editing">Editing</option>
-                            <option value="Educational">Educational</option>
-                            <option value="Fonts">Fonts</option>
-                            <option value="Illustration">Illustration</option>
-                            <option value="Inspiration">Inspiration</option>
-                            <option value="Icons">Icons</option>
-                            <option value="Jobs">Jobs</option>
-                            <option value="Miscellaneous">Miscellaneous</option>
-                            <option value="Podcasting">Podcasting</option>
-                            <option value="Productivity">Productivity</option>
-                            <option value="Stock Images">Stock Images</option>
-                            <option value="Stock Videos">Stock Videos</option>
-                            <option value="Free">Free</option>
-                            <option value="Free Trial">Free Trial</option>
-                            <option value="Paid">Paid</option>
+                                <option value="AI">AI</option>
+                                <option value="Animation">Animation</option>
+                                <option value="Audio">Audio</option>
+                                <option value="Blogging">Blogging</option>
+                                <option value="Colour">Colour</option>
+                                <option value="Collaboration">Collaboration</option>
+                                <option value="Design">Design</option>
+                                <option value="Development">Development</option>
+                                <option value="Editing">Editing</option>
+                                <option value="Educational">Educational</option>
+                                <option value="Fonts">Fonts</option>
+                                <option value="Illustration">Illustration</option>
+                                <option value="Inspiration">Inspiration</option>
+                                <option value="Icons">Icons</option>
+                                <option value="Jobs">Jobs</option>
+                                <option value="Miscellaneous">Miscellaneous</option>
+                                <option value="Podcasting">Podcasting</option>
+                                <option value="Productivity">Productivity</option>
+                                <option value="Stock Images">Stock Images</option>
+                                <option value="Stock Videos">Stock Videos</option>
+                                <option value="Free">Free</option>
+                                <option value="Free Trial">Free Trial</option>
+                                <option value="Paid">Paid</option>
                             </select>
                             <button type="button" onClick={handleAddCategory} className="add-cat">Add</button>
                             <div className="current-cats">
@@ -125,7 +125,7 @@ export default function List() {
             )}
             <div className={className} id="Explore">
                 <div className="list">
-                    <h2>EXPLORE</h2>
+                    <h2 className="explore">EXPLORE</h2>
                     <div className="categories">
                         <div className="cat-list">
                             <div className="cat-column">
@@ -168,18 +168,18 @@ export default function List() {
                     {filteredData.map((resource) => (
                         <div className="card-holder">
                             <div className="card-buttons">
-                                <button onClick={() => handleIdClick(resource._id)}>
+                                <a className="button-left" onClick={() => handleIdClick(resource._id)}>
                                     <img src="https://static.thenounproject.com/png/3406050-200.png" height="20px"/>
-                                </button>
-                                <button onClick={() => handleIdDelete(resource._id)}>
+                                </a>
+                                <a className="button-right" onClick={() => handleIdDelete(resource._id)}>
                                     <img src="https://cdn-icons-png.flaticon.com/512/484/484662.png" height="20px"/>
-                                </button>
+                                </a>
                             </div>
                             <a className="card-link" target="_blank" href={resource.url}>
                                 <div className="card-image" style={{background: `url(${resource.image})`}}/>
                                 <hr/>
-                                <h3 className="card-title" >{resource.name}</h3>
-                                <p className="card-desc" >{resource.description}</p>                         
+                                <h3 className="card-title">{resource.name}</h3>
+                                <p className="card-desc">{resource.description}</p>                         
                             </a>
                         </div>
                     ))}

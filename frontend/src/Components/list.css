@@ -17,7 +17,7 @@
     filter: blur(8px);
 }
 
-.list-info h2 {
+.explore {
     font-size: 36px;
     color: #F0F0F0;
     width: 100%;
@@ -138,12 +138,29 @@
     float: right;
 }
 
+.button-left img{
+    background-color: #fff;
+    padding-right: 6px;
+    padding-bottom: 6px;
+    padding-left: 6px;
+    padding-top: 6px;
+}
+
+.button-right img{
+    background-color: #fff;
+    padding-right: 6px;
+    border-top-right-radius: 20px;
+    padding-bottom: 6px;
+    padding-left: 6px;
+    padding-top: 6px;
+}
+
 .edit-popup {
     position: fixed;
     top: 50%;
     left: 50%;
     z-index: 10;
-    background-color: aliceblue;
+    background-color: rgb(214, 214, 214);
     border-radius: 5px;
     transform: translate(-50%, -50%);
 }
@@ -200,7 +217,6 @@
 
 .category-section {
     display: flex;
-    
 }
 
 .categories-select {
