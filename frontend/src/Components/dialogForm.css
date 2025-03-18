@@ -1,0 +1,70 @@
+.edit-popup {
+    background-color: rgb(214, 214, 214);
+    border-radius: 5px;
+}
+
+.add-cat {
+    width: 100px;
+    margin-left: 20px;
+    height: 40px;
+}
+
+.added-cat{
+    color: #000;
+    margin: 0 0 10px 10px;
+}
+
+.Post-form {
+    display: flex;
+    flex-direction: column;
+    margin: 35px;
+}
+
+.Post-form > input {
+    margin: 1rem 0 1rem 0;
+    height: 2rem;
+}
+
+.Post-form > button {
+    margin: 1rem 0 1rem 0;
+    height: 2rem;
+}
+
+.close-pop {
+    width: 35px;
+    padding: 0;
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0 !important;
+    border: 0;
+}
+
+.close-pop:hover {
+    background-color: red;
+    color: #fff;
+}
+
+.submit-button {
+    display: flex;
+}
+
+.submit-button button {
+    width: 50%;
+}
+
+.category-section {
+    display: flex;
+}
+
+.categories-select {
+    height: 40px;
+    width: 150px;
+    text-align: center;
+}
+
+.current-cats {
+    display: flex;
+    flex-direction: column;
+    margin: 0 0 10px 10px;
+}

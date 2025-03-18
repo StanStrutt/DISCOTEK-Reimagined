@@ -1,5 +1,4 @@
 import { useState } from "react"
-import axios from "axios"
 
 
 interface AddFormData {
@@ -36,31 +35,7 @@ export default function UpdateContent() {
         })
     }
         
-        
-    const handleUpdate = async () => {
-        if (!formData._id) {
-            setMessage("Please enter an id to update the user.");
-            return;
-        }
-        
-        try {
-            const response = await axios.put(`http://localhost:5000/update/${formData._id}`, formData, {
-                headers: { "Content-Type": "application/json" },
-            });
-            
-              setMessage(response.data.message);
-            }catch (err) {
-                if (err instanceof Error) {
-                    setMessage(err.message)
-            } else {
-                setMessage("Something went wrong");
-            }
-          };
-          setIsOpen(false)
-        }
-        
     return{
-        handleUpdate,
         handleAddCategory,
         handleChange,
         message,

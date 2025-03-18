@@ -2,41 +2,18 @@ import "./list.css"
 import Get from "../services/api-calls"
 import UpdateContent from "./updateContent"
 import axios from "axios"
-import { useRef, useEffect } from "react"
+import { useRef } from "react"
 // import { useState, useEffect } from "react"
+import DialogForm from "./dialogForm"
     
 
 export default function List() { 
 
     const {filteredData, handleTopicClick, error} = Get()
 
-    const {handleUpdate, handleAddCategory, handleChange, categoryInput,  setCategoryInput, formData, setMessage, setFormData, handleDelCategory} = UpdateContent()
-
-    // const [className, setClassName] = useState<string>()
-    
-    // useEffect(() => {
-    //     if (isOpen) {
-    //         setClassName("list-info-blur")
-    //     } else {
-    //         setClassName("list-info")
-    //     }
-    // }, [isOpen])
+    const {handleAddCategory, formData, setMessage, setFormData, categoryInput, setCategoryInput, handleChange, handleDelCategory} = UpdateContent()
     
     const dialogRef = useRef<HTMLDialogElement | null>(null);
-
-        const closeDialog = () => {
-            if (dialogRef.current) {
-                dialogRef.current.close();
-            }
-        }
-    
-        useEffect(() => {
-            const dialog = dialogRef.current;
-            if (dialog) {
-                dialog.addEventListener("cancel", closeDialog);
-                return () => dialog.removeEventListener("cancel", closeDialog)
-            }
-        }, []);
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
@@ -54,9 +31,9 @@ export default function List() {
             } else {
                 setMessage("Something went wrong");
             }
-          };
-          dialogRef.current?.close()
         }
+        dialogRef.current?.close()
+    }
 
     const handleIdClick = async (value: string) => {
         if (dialogRef.current) {
@@ -107,61 +84,9 @@ export default function List() {
     };
 
     return(
-        <>
-            <dialog className="edit-popup" ref={dialogRef}>
-                <form onSubmit={handleSubmit} className="Post-form">
-                    <button className="close-pop" type="button" onClick={closeDialog}>X</button>
-                    <input type="text" name="name" placeholder="Enter name" value={formData.name} onChange={handleChange}
-                    />
-                    <input type="text" name="url" placeholder="Enter url" value={formData.url} onChange={handleChange}
-                    />
-                    <input type="text" name="description" placeholder="Enter description" value={formData.description} onChange={handleChange}
-                    />
-                    <input type="text" name="image" placeholder="Enter image link" value={formData.image} onChange={handleChange}
-                    />
-                    <div className="category-section">
-                        <select className="categories-select" name="categories" value={categoryInput} onChange={(e) => setCategoryInput(e.target.value)}>
-                            <option hidden selected value="">Enter Catergories</option>
-                            <option value="Accessibility">Accessibility</option>
-                            <option value="AI">AI</option>
-                            <option value="Animation">Animation</option>
-                            <option value="Audio">Audio</option>
-                            <option value="Blogging">Blogging</option>
-                            <option value="Colour">Colour</option>
-                            <option value="Collaboration">Collaboration</option>
-                            <option value="Design">Design</option>
-                            <option value="Development">Development</option>
-                            <option value="Editing">Editing</option>
-                            <option value="Educational">Educational</option>
-                            <option value="Fonts">Fonts</option>
-                            <option value="Illustration">Illustration</option>
-                            <option value="Inspiration">Inspiration</option>
-                            <option value="Icons">Icons</option>
-                            <option value="Jobs">Jobs</option>
-                            <option value="Miscellaneous">Miscellaneous</option>
-                            <option value="Podcasting">Podcasting</option>
-                            <option value="Productivity">Productivity</option>
-                            <option value="Stock Images">Stock Images</option>
-                            <option value="Stock Videos">Stock Videos</option>
-                            <option value="Free">Free</option>
-                            <option value="Free Trial">Free Trial</option>
-                            <option value="Paid">Paid</option>
-                        </select>
-                        <button type="button" onClick={handleAddCategory} className="add-cat">Add</button>
-                        <div className="current-cats">
-                            {formData.categories.map((categories, index) => (
-                                <span className="added-cat" key={index}>
-                                    <button className="delete-cat" onClick={() => handleDelCategory(categories)}>X</button>
-                                    {categories}
-                                </span>
-                            ))}
-                        </div>
-                    </div>
-                    <div className="submit-button">
-                        <button type="submit" onClick={handleUpdate}>Update</button>
-                    </div>
-                </form>
-            </dialog>
+        <>  
+            <DialogForm formData={formData} dialogRef={dialogRef} handleSubmit={handleSubmit} handleAddCategory={handleAddCategory} button={"Update"} 
+            categoryInput={categoryInput} setCategoryInput={setCategoryInput} handleChange={handleChange} handleDelCategory={handleDelCategory}/>
             <div className="list-info" id="Explore">
                 <div className="list">
                     <h2 className="explore">EXPLORE</h2>
