@@ -36,24 +36,6 @@ export default function UpdateContent() {
         })
     }
         
-    const handleSubmit = async (e: React.FormEvent) => {
-        e.preventDefault();
-        
-        try {
-            const response = await axios.put(`http://localhost:5000/update/${formData._id}`, formData, {
-                headers: { "Content-Type": "application/json" },
-            });
-        
-            setMessage(response.data.message);
-            setFormData({ _id: "", name: "", url: "", description: "", image: "", categories: [] }); // Reset form after submission
-            } catch (err) {
-                if (err instanceof Error) {
-                    setMessage(err.message)
-            } else {
-                setMessage("Something went wrong");
-            }
-          };
-        }
         
     const handleUpdate = async () => {
         if (!formData._id) {
@@ -79,7 +61,6 @@ export default function UpdateContent() {
         
     return{
         handleUpdate,
-        handleSubmit,
         handleAddCategory,
         handleChange,
         message,

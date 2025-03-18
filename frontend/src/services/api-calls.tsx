@@ -35,7 +35,7 @@ export default function Get() {
 
     const handleTopicClick = (value: string) => {
         setTopic(value);
-       };
+    };
 
     useEffect(() => {
         if (topic) {

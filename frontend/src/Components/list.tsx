@@ -2,27 +2,68 @@ import "./list.css"
 import Get from "../services/api-calls"
 import UpdateContent from "./updateContent"
 import axios from "axios"
-import { useState, useEffect } from "react"
-
+import { useRef, useEffect } from "react"
+// import { useState, useEffect } from "react"
+    
 
 export default function List() { 
 
     const {filteredData, handleTopicClick, error} = Get()
 
-    const {handleUpdate, handleSubmit, handleAddCategory, handleChange, categoryInput,  setCategoryInput, formData, setMessage, setFormData, handleDelCategory, isOpen, setIsOpen} = UpdateContent()
+    const {handleUpdate, handleAddCategory, handleChange, categoryInput,  setCategoryInput, formData, setMessage, setFormData, handleDelCategory} = UpdateContent()
 
-    const [className, setClassName] = useState<string>()
+    // const [className, setClassName] = useState<string>()
     
-    useEffect(() => {
-        if (isOpen) {
-            setClassName("list-info-blur")
-        } else {
-            setClassName("list-info")
+    // useEffect(() => {
+    //     if (isOpen) {
+    //         setClassName("list-info-blur")
+    //     } else {
+    //         setClassName("list-info")
+    //     }
+    // }, [isOpen])
+    
+    const dialogRef = useRef<HTMLDialogElement | null>(null);
+
+        const closeDialog = () => {
+            if (dialogRef.current) {
+                dialogRef.current.close();
+            }
         }
-    }, [isOpen])
     
+        useEffect(() => {
+            const dialog = dialogRef.current;
+            if (dialog) {
+                dialog.addEventListener("cancel", closeDialog);
+                return () => dialog.removeEventListener("cancel", closeDialog)
+            }
+        }, []);
+
+    const handleSubmit = async (e: React.FormEvent) => {
+        e.preventDefault();
+            
+        try {
+            const response = await axios.put(`http://localhost:5000/update/${formData._id}`, formData, {
+                headers: { "Content-Type": "application/json" },
+            });
+            
+            setMessage(response.data.message);
+            setFormData({ _id: "", name: "", url: "", description: "", image: "", categories: [] }); // Reset form after submission
+            } catch (err) {
+                if (err instanceof Error) {
+                    setMessage(err.message)
+            } else {
+                setMessage("Something went wrong");
+            }
+          };
+          dialogRef.current?.close()
+        }
+
     const handleIdClick = async (value: string) => {
-        setIsOpen(!isOpen)
+        if (dialogRef.current) {
+            dialogRef.current.showModal();
+            const firstInput = dialogRef.current.querySelector("input");
+            firstInput?.focus()
+        }
         try {
             const response = await axios.get(`http://localhost:5000/get/${value}`)
                 setFormData(response.data)
@@ -67,63 +108,61 @@ export default function List() {
 
     return(
         <>
-            {isOpen && (
-                <div className="edit-popup">
-                    <form onSubmit={handleSubmit} className="Post-form">
-                        <button className="close-pop" type="button" onClick={() => setIsOpen(false)}>X</button>
-                        <input type="text" name="name" placeholder="Enter name" value={formData.name} onChange={handleChange}
-                        />
-                        <input type="text" name="url" placeholder="Enter url" value={formData.url} onChange={handleChange}
-                        />
-                        <input type="text" name="description" placeholder="Enter description" value={formData.description} onChange={handleChange}
-                        />
-                        <input type="text" name="image" placeholder="Enter image link" value={formData.image} onChange={handleChange}
-                        />
-                        <div className="category-section">
-                            <select className="categories-select" name="categories" value={categoryInput} onChange={(e) => setCategoryInput(e.target.value)}>
-                                <option hidden selected value="">Enter Catergories</option>
-                                <option value="Accessibility">Accessibility</option>
-                                <option value="AI">AI</option>
-                                <option value="Animation">Animation</option>
-                                <option value="Audio">Audio</option>
-                                <option value="Blogging">Blogging</option>
-                                <option value="Colour">Colour</option>
-                                <option value="Collaboration">Collaboration</option>
-                                <option value="Design">Design</option>
-                                <option value="Development">Development</option>
-                                <option value="Editing">Editing</option>
-                                <option value="Educational">Educational</option>
-                                <option value="Fonts">Fonts</option>
-                                <option value="Illustration">Illustration</option>
-                                <option value="Inspiration">Inspiration</option>
-                                <option value="Icons">Icons</option>
-                                <option value="Jobs">Jobs</option>
-                                <option value="Miscellaneous">Miscellaneous</option>
-                                <option value="Podcasting">Podcasting</option>
-                                <option value="Productivity">Productivity</option>
-                                <option value="Stock Images">Stock Images</option>
-                                <option value="Stock Videos">Stock Videos</option>
-                                <option value="Free">Free</option>
-                                <option value="Free Trial">Free Trial</option>
-                                <option value="Paid">Paid</option>
-                            </select>
-                            <button type="button" onClick={handleAddCategory} className="add-cat">Add</button>
-                            <div className="current-cats">
-                                {formData.categories.map((categories, index) => (
-                                    <span className="added-cat" key={index}>
-                                        <button className="delete-cat" onClick={() => handleDelCategory(categories)}>X</button>
-                                        {categories}
-                                    </span>
-                                ))}
-                            </div>
+            <dialog className="edit-popup" ref={dialogRef}>
+                <form onSubmit={handleSubmit} className="Post-form">
+                    <button className="close-pop" type="button" onClick={closeDialog}>X</button>
+                    <input type="text" name="name" placeholder="Enter name" value={formData.name} onChange={handleChange}
+                    />
+                    <input type="text" name="url" placeholder="Enter url" value={formData.url} onChange={handleChange}
+                    />
+                    <input type="text" name="description" placeholder="Enter description" value={formData.description} onChange={handleChange}
+                    />
+                    <input type="text" name="image" placeholder="Enter image link" value={formData.image} onChange={handleChange}
+                    />
+                    <div className="category-section">
+                        <select className="categories-select" name="categories" value={categoryInput} onChange={(e) => setCategoryInput(e.target.value)}>
+                            <option hidden selected value="">Enter Catergories</option>
+                            <option value="Accessibility">Accessibility</option>
+                            <option value="AI">AI</option>
+                            <option value="Animation">Animation</option>
+                            <option value="Audio">Audio</option>
+                            <option value="Blogging">Blogging</option>
+                            <option value="Colour">Colour</option>
+                            <option value="Collaboration">Collaboration</option>
+                            <option value="Design">Design</option>
+                            <option value="Development">Development</option>
+                            <option value="Editing">Editing</option>
+                            <option value="Educational">Educational</option>
+                            <option value="Fonts">Fonts</option>
+                            <option value="Illustration">Illustration</option>
+                            <option value="Inspiration">Inspiration</option>
+                            <option value="Icons">Icons</option>
+                            <option value="Jobs">Jobs</option>
+                            <option value="Miscellaneous">Miscellaneous</option>
+                            <option value="Podcasting">Podcasting</option>
+                            <option value="Productivity">Productivity</option>
+                            <option value="Stock Images">Stock Images</option>
+                            <option value="Stock Videos">Stock Videos</option>
+                            <option value="Free">Free</option>
+                            <option value="Free Trial">Free Trial</option>
+                            <option value="Paid">Paid</option>
+                        </select>
+                        <button type="button" onClick={handleAddCategory} className="add-cat">Add</button>
+                        <div className="current-cats">
+                            {formData.categories.map((categories, index) => (
+                                <span className="added-cat" key={index}>
+                                    <button className="delete-cat" onClick={() => handleDelCategory(categories)}>X</button>
+                                    {categories}
+                                </span>
+                            ))}
                         </div>
-                        <div className="submit-button">
-                            <button type="submit" onClick={handleUpdate}>Update</button>
-                        </div>
-                    </form>
-                </div>
-            )}
-            <div className={className} id="Explore">
+                    </div>
+                    <div className="submit-button">
+                        <button type="submit" onClick={handleUpdate}>Update</button>
+                    </div>
+                </form>
+            </dialog>
+            <div className="list-info" id="Explore">
                 <div className="list">
                     <h2 className="explore">EXPLORE</h2>
                     <div className="categories">
@@ -179,7 +218,7 @@ export default function List() {
                                 <div className="card-image" style={{background: `url(${resource.image})`}}/>
                                 <hr/>
                                 <h3 className="card-title">{resource.name}</h3>
-                                <p className="card-desc">{resource.description}</p>                         
+                                <p className="card-desc">{resource.description}</p>
                             </a>
                         </div>
                     ))}

@@ -1,12 +1,11 @@
 
+.no-scroll {
+    overflow: hidden;
+}
+
 .edit-content {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    z-index: 10;
     background-color: rgb(214, 214, 214);
     border-radius: 5px;
-    transform: translate(-50%, -50%);
 }
 
 .close-pop {
