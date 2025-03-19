@@ -7,12 +7,13 @@ import DialogForm from "./dialogForm"
 
 export default function AddContent() {
 
-    const {handleAddCategory, formData, setMessage, setFormData, categoryInput, setCategoryInput, handleChange, handleDelCategory} = UpdateContent()
+    const {handleAddCategory, formData, setMessage, setFormData, categoryInput, setCategoryInput, handleChange, handleDelCategory, setIsOpen} = UpdateContent()
 
     const dialogRef = useRef<HTMLDialogElement | null>(null);
 
     const openDialog = () => {
         if (dialogRef.current) {
+            setIsOpen(true)
             dialogRef.current.showModal();
             const firstInput = dialogRef.current.querySelector("input");
             firstInput?.focus()
@@ -37,14 +38,15 @@ export default function AddContent() {
             }
         }
         dialogRef.current?.close()
+        setIsOpen(false)
     };
     
 
     return(
         <>
-            <button onClick={openDialog}>Add entry</button>
+            <button onClick={openDialog}>+</button>
             <DialogForm formData={formData} dialogRef={dialogRef} handleSubmit={handleSubmit} handleAddCategory={handleAddCategory} button={"Create"}
-            categoryInput={categoryInput} setCategoryInput={setCategoryInput} handleChange={handleChange} handleDelCategory={handleDelCategory}/>
+            categoryInput={categoryInput} setCategoryInput={setCategoryInput} handleChange={handleChange} handleDelCategory={handleDelCategory} setIsOpen={setIsOpen}/>
         </>
     )
 }

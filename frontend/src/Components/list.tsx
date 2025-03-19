@@ -3,17 +3,17 @@ import Get from "../services/api-calls"
 import UpdateContent from "./updateContent"
 import axios from "axios"
 import { useRef } from "react"
-// import { useState, useEffect } from "react"
 import DialogForm from "./dialogForm"
+import AddContent from "./addContent"
     
 
 export default function List() { 
 
     const {filteredData, handleTopicClick, error} = Get()
 
-    const {handleAddCategory, formData, setMessage, setFormData, categoryInput, setCategoryInput, handleChange, handleDelCategory} = UpdateContent()
+    const {handleAddCategory, formData, setMessage, setFormData, categoryInput, setCategoryInput, handleChange, handleDelCategory, setIsOpen} = UpdateContent()
     
-    const dialogRef = useRef<HTMLDialogElement | null>(null);
+    const dialogRef = useRef<HTMLDialogElement | null>(null)
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
@@ -33,10 +33,12 @@ export default function List() {
             }
         }
         dialogRef.current?.close()
+        setIsOpen(false)
     }
 
     const handleIdClick = async (value: string) => {
         if (dialogRef.current) {
+            setIsOpen(true);
             dialogRef.current.showModal();
             const firstInput = dialogRef.current.querySelector("input");
             firstInput?.focus()
@@ -85,15 +87,18 @@ export default function List() {
 
     return(
         <>  
-            <DialogForm formData={formData} dialogRef={dialogRef} handleSubmit={handleSubmit} handleAddCategory={handleAddCategory} button={"Update"} 
-            categoryInput={categoryInput} setCategoryInput={setCategoryInput} handleChange={handleChange} handleDelCategory={handleDelCategory}/>
+            <DialogForm formData={formData} dialogRef={dialogRef} handleSubmit={handleSubmit} handleAddCategory={handleAddCategory} button={"Update"}
+            categoryInput={categoryInput} setCategoryInput={setCategoryInput} handleChange={handleChange} handleDelCategory={handleDelCategory} setIsOpen={setIsOpen}/>
             <div className="list-info" id="Explore">
                 <div className="list">
-                    <h2 className="explore">EXPLORE</h2>
+                    <div className="add-to-explore">
+                        <h2 className="explore">EXPLORE</h2>
+                        <AddContent/>
+                    </div>
                     <div className="categories">
                         <div className="cat-list">
                             <div className="cat-column">
-                                <button className="cat-name" onClick={() => handleTopicClick("Accessibility")}>Accessibility</button> 
+                                <button className="cat-name" onClick={() => handleTopicClick("Accessibility")}>Accessibility</button>
                                 <button className="cat-name" onClick={() => handleTopicClick("AI")}>AI</button>
                                 <button className="cat-name" onClick={() => handleTopicClick("Animation")}>Animation</button>
                                 <button className="cat-name" onClick={() => handleTopicClick("Audio")}>Audio</button>

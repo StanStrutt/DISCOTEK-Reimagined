@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
 
 
 interface AddFormData {
@@ -16,7 +16,15 @@ export default function UpdateContent() {
     const [categoryInput, setCategoryInput] = useState<string>("");
     const [message, setMessage] = useState<string>("");
     const [isOpen, setIsOpen] = useState<boolean>(false)
-  
+
+    useEffect(() => {
+        if (isOpen) {
+            document.body.style.overflow = "hidden";
+        } else {
+            document.body.style.overflow = "unset";
+        }
+    }, [isOpen])
+
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
     };
@@ -45,7 +53,6 @@ export default function UpdateContent() {
         setFormData,
         setMessage,
         handleDelCategory,
-        isOpen,
         setIsOpen
     }
 }

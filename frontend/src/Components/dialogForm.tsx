@@ -7,9 +7,12 @@ export default function DialogForm(props) {
     const formdata = props.formData
 
     const dialogref = props.dialogRef
+
+    const setisopen = props.setIsOpen
     
             const closeDialog = () => {
                 if (dialogref.current) {
+                    setisopen(false)
                     dialogref.current.close();
                 }
             }
@@ -20,7 +23,7 @@ export default function DialogForm(props) {
                     dialog.addEventListener("cancel", closeDialog);
                     return () => dialog.removeEventListener("cancel", closeDialog)
                 }
-            }, []);
+            }, );
 
     return(
         <dialog className="edit-popup" ref={props.dialogRef}>
