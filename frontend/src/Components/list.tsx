@@ -37,16 +37,16 @@ export default function List() {
     }
 
     const handleIdClick = async (value: string) => {
-        if (dialogRef.current) {
-            setIsOpen(true);
-            dialogRef.current.showModal();
-            const firstInput = dialogRef.current.querySelector("input");
-            firstInput?.focus()
-        }
         try {
             const response = await axios.get(`http://localhost:5000/get/${value}`)
                 setFormData(response.data)
                 setMessage(response.data.message)
+                if (dialogRef.current) {
+                    setIsOpen(true);
+                    dialogRef.current.showModal();
+                    const firstInput = dialogRef.current.querySelector("input");
+                    firstInput?.focus()
+                }
             } catch (err) {
                 if (err instanceof Error) {
                     setMessage(err.message)
@@ -138,10 +138,10 @@ export default function List() {
                         <div className="card-holder">
                             <div className="card-buttons">
                                 <a className="button-left" onClick={() => handleIdClick(resource._id)}>
-                                    <img src="https://static.thenounproject.com/png/3406050-200.png" height="20px"/>
+                                    <img className="edit-img" src="https://static.thenounproject.com/png/3406050-200.png" height="20px"/>
                                 </a>
                                 <a className="button-right" onClick={() => handleIdDelete(resource._id)}>
-                                    <img src="https://cdn-icons-png.flaticon.com/512/484/484662.png" height="20px"/>
+                                    <img className="delete-img" src="https://cdn-icons-png.flaticon.com/512/484/484662.png" height="20px"/>
                                 </a>
                             </div>
                             <a className="card-link" target="_blank" href={resource.url}>

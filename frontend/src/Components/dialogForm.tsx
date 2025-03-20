@@ -23,7 +23,7 @@ export default function DialogForm(props) {
                     dialog.addEventListener("cancel", closeDialog);
                     return () => dialog.removeEventListener("cancel", closeDialog)
                 }
-            }, );
+            }, []);
 
     return(
         <dialog className="edit-popup" ref={props.dialogRef}>
@@ -76,7 +76,7 @@ export default function DialogForm(props) {
                     </div>
                 </div>
                 <div className="submit-button">
-                    <button type="submit">{props.button}</button>
+                    <button className="submitting-button" type="submit">{props.button}</button>
                 </div>
             </form>
         </dialog>

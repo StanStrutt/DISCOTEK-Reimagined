@@ -28,7 +28,7 @@ export default function Get() {
             }
         }}
         fetchData()
-    }, [data])
+    }, [])
 
     const [topic, setTopic] = useState<string>("")
     const [filteredData, setFilteredData] = useState<Resources[]>(data)

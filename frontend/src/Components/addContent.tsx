@@ -44,7 +44,7 @@ export default function AddContent() {
 
     return(
         <>
-            <button onClick={openDialog}>+</button>
+            <button className="add-button" onClick={openDialog}>+</button>
             <DialogForm formData={formData} dialogRef={dialogRef} handleSubmit={handleSubmit} handleAddCategory={handleAddCategory} button={"Create"}
             categoryInput={categoryInput} setCategoryInput={setCategoryInput} handleChange={handleChange} handleDelCategory={handleDelCategory} setIsOpen={setIsOpen}/>
         </>
