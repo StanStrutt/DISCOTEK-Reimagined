@@ -9,6 +9,8 @@ import AddContent from "./addContent"
 
 export default function List() { 
 
+    const VITE_URL = import.meta.env.VITE_API_URL;
+
     const {filteredData, handleTopicClick, error} = Get()
 
     const {handleAddCategory, formData, setMessage, setFormData, categoryInput, setCategoryInput, handleChange, handleDelCategory, setIsOpen} = UpdateContent()
@@ -19,7 +21,7 @@ export default function List() {
         e.preventDefault();
             
         try {
-            const response = await axios.put(`http://localhost:5000/update/${formData._id}`, formData, {
+            const response = await axios.put(`${VITE_URL}/update/${formData._id}`, formData, {
                 headers: { "Content-Type": "application/json" },
             });
             
@@ -38,7 +40,7 @@ export default function List() {
 
     const handleIdClick = async (value: string) => {
         try {
-            const response = await axios.get(`http://localhost:5000/get/${value}`)
+            const response = await axios.get(`${VITE_URL}/get/${value}`)
                 setFormData(response.data)
                 setMessage(response.data.message)
                 if (dialogRef.current) {
@@ -58,7 +60,7 @@ export default function List() {
 
     const handleIdDelete = async (value: string) => {
         try {
-            const response = await axios.get(`http://localhost:5000/get/${value}`)
+            const response = await axios.get(`${VITE_URL}/get/${value}`)
                 setFormData(response.data)
                 setMessage(response.data.message)
             } catch (err) {
@@ -73,7 +75,7 @@ export default function List() {
         if (!confirmDelete) return;
 
         try {
-            const response = await axios.delete(`http://localhost:5000/delete/${value}`)
+            const response = await axios.delete(`${VITE_URL}/delete/${value}`)
                 setFormData(response.data)
                 setMessage(response.data.message)
             } catch (err) {

@@ -6,6 +6,8 @@ import DialogForm from "./dialogForm"
 
 
 export default function AddContent() {
+    
+    const VITE_URL = import.meta.env.VITE_API_URL;
 
     const {handleAddCategory, formData, setMessage, setFormData, categoryInput, setCategoryInput, handleChange, handleDelCategory, setIsOpen} = UpdateContent()
 
@@ -24,7 +26,7 @@ export default function AddContent() {
         e.preventDefault();
         
         try {
-            const response = await axios.post("http://localhost:5000/submit", formData, {
+            const response = await axios.post(`${VITE_URL}/submit`, formData, {
                 headers: { "Content-Type": "application/json" },
             });
         

@@ -53,6 +53,7 @@ export default function UpdateContent() {
         setFormData,
         setMessage,
         handleDelCategory,
-        setIsOpen
+        setIsOpen,
+        isOpen
     }
 }

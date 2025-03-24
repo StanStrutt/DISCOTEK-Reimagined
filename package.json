@@ -12,5 +12,8 @@
   "dependencies": {
     "concurrently": "^9.1.2",
     "express-validator": "^7.2.1"
+  },
+  "devDependencies": {
+    "@types/node": "^22.13.12"
   }
 }

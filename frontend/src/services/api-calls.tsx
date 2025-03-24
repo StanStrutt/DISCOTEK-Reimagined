@@ -12,13 +12,15 @@ interface Resources {
 
 export default function Get() {
 
+    const VITE_URL = import.meta.env.VITE_API_URL;
+
     const [data, setData] = useState<Resources[]>([])
     const [error, setError] = useState<string>("")
 
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await axios.get(`http://localhost:5000/resources`)
+                const response = await axios.get(`${VITE_URL}/resources`)
                 setData(response.data)
             } catch (err) {
                 if (err instanceof Error) {
@@ -28,7 +30,7 @@ export default function Get() {
             }
         }}
         fetchData()
-    }, [])
+    }, [VITE_URL])
 
     const [topic, setTopic] = useState<string>("")
     const [filteredData, setFilteredData] = useState<Resources[]>(data)
