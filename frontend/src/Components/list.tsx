@@ -11,7 +11,7 @@ export default function List() {
 
     const VITE_URL = import.meta.env.VITE_API_URL;
 
-    const {filteredData, handleTopicClick, error} = Get()
+    const {filteredData, handleTopicClick, error, fetchData} = Get()
 
     const {handleAddCategory, formData, setMessage, setFormData, categoryInput, setCategoryInput, handleChange, handleDelCategory, setIsOpen} = UpdateContent()
     
@@ -36,9 +36,11 @@ export default function List() {
         }
         dialogRef.current?.close()
         setIsOpen(false)
+        fetchData()
     }
 
     const handleIdClick = async (value: string) => {
+
         try {
             const response = await axios.get(`${VITE_URL}/get/${value}`)
                 setFormData(response.data)
@@ -59,6 +61,7 @@ export default function List() {
     };
 
     const handleIdDelete = async (value: string) => {
+
         try {
             const response = await axios.get(`${VITE_URL}/get/${value}`)
                 setFormData(response.data)
@@ -69,7 +72,7 @@ export default function List() {
                 } else {
                     setMessage("Something went wrong")
                 }
-        }
+            }
         
         const confirmDelete = window.confirm(`Are you sure you want to delete this?`);
         if (!confirmDelete) return;
@@ -84,7 +87,7 @@ export default function List() {
                 } else {
                     setMessage("Something went wrong")
                 }
-        }
+            }
     };
 
     return(

@@ -17,18 +17,19 @@ export default function Get() {
     const [data, setData] = useState<Resources[]>([])
     const [error, setError] = useState<string>("")
 
+    const fetchData = async () => {
+        try {
+            const response = await axios.get(`${VITE_URL}/resources`)
+            setData(response.data)
+        } catch (err) {
+            if (err instanceof Error) {
+                setError(err.message)
+        } else {
+            setError("Something went wrong")
+        }
+    }}
+
     useEffect(() => {
-        const fetchData = async () => {
-            try {
-                const response = await axios.get(`${VITE_URL}/resources`)
-                setData(response.data)
-            } catch (err) {
-                if (err instanceof Error) {
-                    setError(err.message)
-            } else {
-                setError("Something went wrong")
-            }
-        }}
         fetchData()
     }, [VITE_URL])
 
@@ -53,5 +54,6 @@ export default function Get() {
         filteredData,
         handleTopicClick,
         error,
+        fetchData
     }
 }
