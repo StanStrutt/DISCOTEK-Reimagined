@@ -2,7 +2,7 @@ import { useRef } from "react"
 import axios from "axios"
 import UpdateContent from "./updateContent"
 import DialogForm from "./dialogForm"
-import Get from "../services/api-calls";
+import Get from "../services/api-calls"
 
 
 
@@ -10,7 +10,7 @@ export default function AddContent() {
     
     const VITE_URL = import.meta.env.VITE_API_URL;
 
-    const {fetchData} = Get()
+    const {forceUpdate} = Get()
 
     const {handleAddCategory, formData, setMessage, setFormData, categoryInput, setCategoryInput, handleChange, handleDelCategory, setIsOpen} = UpdateContent()
 
@@ -34,7 +34,7 @@ export default function AddContent() {
             });
         
             setMessage(response.data.message);
-            setFormData({ _id:"", name: "", url: "", description: "", image: "", categories: [] }); // Reset form after submission
+            setFormData({ _id: "", name: "", url: "", description: "", image: "", categories: [] }); // Reset form after submission                      
             } catch (err) {
                 if (err instanceof Error) {
                     setMessage(err.message)
@@ -42,11 +42,13 @@ export default function AddContent() {
                 setMessage("Something went wrong");
             }
         }
-        fetchData()
+        forceUpdate()
         dialogRef.current?.close()
         setIsOpen(false)
     }
     
+    
+
 
     return(
         <>

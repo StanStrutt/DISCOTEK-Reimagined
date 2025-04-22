@@ -11,7 +11,7 @@ export default function List() {
 
     const VITE_URL = import.meta.env.VITE_API_URL;
 
-    const {filteredData, handleTopicClick, error, fetchData} = Get()
+    const {filteredData, handleTopicClick, error, forceUpdate} = Get()
 
     const {handleAddCategory, formData, setMessage, setFormData, categoryInput, setCategoryInput, handleChange, handleDelCategory, setIsOpen} = UpdateContent()
     
@@ -34,9 +34,9 @@ export default function List() {
                 setMessage("Something went wrong");
             }
         }
+        forceUpdate()
         dialogRef.current?.close()
         setIsOpen(false)
-        fetchData()
     }
 
     const handleIdClick = async (value: string) => {
@@ -140,7 +140,7 @@ export default function List() {
                 <div className="info"> 
                     {error}
                     {filteredData.map((resource) => (
-                        <div className="card-holder">
+                        <div className="card-holder" key={resource._id}>
                             <div className="card-buttons">
                                 <a className="button-left" onClick={() => handleIdClick(resource._id)}>
                                     <img className="edit-img" src="https://static.thenounproject.com/png/3406050-200.png" height="20px"/>

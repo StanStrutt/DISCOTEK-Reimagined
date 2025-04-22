@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useReducer } from "react";
 import axios from "axios"
 
 interface Resources {
@@ -17,21 +17,22 @@ export default function Get() {
     const [data, setData] = useState<Resources[]>([])
     const [error, setError] = useState<string>("")
 
-    const fetchData = async () => {
-        try {
-            const response = await axios.get(`${VITE_URL}/resources`)
-            setData(response.data)
-        } catch (err) {
-            if (err instanceof Error) {
-                setError(err.message)
-        } else {
-            setError("Something went wrong")
-        }
-    }}
+    const [reducerValue, forceUpdate] = useReducer(x => x + 1, 0);
 
     useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const response = await axios.get(`${VITE_URL}/resources`)
+                setData(response.data)
+            } catch (err) {
+                if (err instanceof Error) {
+                    setError(err.message)
+            } else {
+                setError("Something went wrong")
+            }
+        }}
         fetchData()
-    }, [VITE_URL])
+    }, [reducerValue])
 
     const [topic, setTopic] = useState<string>("")
     const [filteredData, setFilteredData] = useState<Resources[]>(data)
@@ -54,6 +55,6 @@ export default function Get() {
         filteredData,
         handleTopicClick,
         error,
-        fetchData
+        forceUpdate,
     }
 }

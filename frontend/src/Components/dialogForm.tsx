@@ -1,8 +1,7 @@
 import "./dialogForm.css"
 import { useEffect } from "react";
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-//@ts-expect-error
-export default function DialogForm(props) {
+
+export default function DialogForm(props: any) {
 
     const formdata = props.formData
 
