@@ -11,7 +11,7 @@ export default function List() {
 
     const VITE_URL = import.meta.env.VITE_API_URL;
 
-    const {filteredData, handleTopicClick, error} = Get()
+    const {filteredData, handleTopicClick, error, fetchData} = Get()
 
     const {handleAddCategory, formData, setMessage, setFormData, categoryInput, setCategoryInput, handleChange, handleDelCategory, setIsOpen} = UpdateContent()
     
@@ -34,11 +34,13 @@ export default function List() {
                 setMessage("Something went wrong");
             }
         }
+        fetchData()
         dialogRef.current?.close()
         setIsOpen(false)
     }
 
     const handleIdClick = async (value: string) => {
+
         try {
             const response = await axios.get(`${VITE_URL}/get/${value}`)
                 setFormData(response.data)
@@ -59,6 +61,7 @@ export default function List() {
     };
 
     const handleIdDelete = async (value: string) => {
+
         try {
             const response = await axios.get(`${VITE_URL}/get/${value}`)
                 setFormData(response.data)
@@ -69,7 +72,7 @@ export default function List() {
                 } else {
                     setMessage("Something went wrong")
                 }
-        }
+            }
         
         const confirmDelete = window.confirm(`Are you sure you want to delete this?`);
         if (!confirmDelete) return;
@@ -84,7 +87,7 @@ export default function List() {
                 } else {
                     setMessage("Something went wrong")
                 }
-        }
+            }
     };
 
     return(
@@ -137,7 +140,7 @@ export default function List() {
                 <div className="info"> 
                     {error}
                     {filteredData.map((resource) => (
-                        <div className="card-holder">
+                        <div className="card-holder" key={resource._id}>
                             <div className="card-buttons">
                                 <a className="button-left" onClick={() => handleIdClick(resource._id)}>
                                     <img className="edit-img" src="https://static.thenounproject.com/png/3406050-200.png" height="20px"/>

@@ -1,6 +1,7 @@
 import "./dialogForm.css"
 import { useEffect } from "react";
 
+
 interface AddFormData {
     _id: string;
     name: string;
@@ -20,7 +21,7 @@ export default function DialogForm( props: {formData : AddFormData,
     setCategoryInput : React.Dispatch<React.SetStateAction<string>>,
     handleAddCategory : () => void,
     handleDelCategory : (categoryDel: string) => void,
-    button : string
+    button : string,
 } ) {
 
     const formdata = props.formData
@@ -96,4 +97,4 @@ export default function DialogForm( props: {formData : AddFormData,
             </form>
         </dialog>
     )
-}
+};
