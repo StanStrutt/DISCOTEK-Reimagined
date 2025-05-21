@@ -1,29 +1,44 @@
 import "./dialogForm.css"
 import { useEffect } from "react";
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-//@ts-expect-error
-export default function DialogForm(props) {
+
+interface AddFormData {
+    _id: string;
+    name: string;
+    url: string;
+    description: string;
+    image: string;
+    categories: string[];
+}
+
+
+export default function DialogForm( props: {formData : AddFormData, 
+    setIsOpen : React.Dispatch<React.SetStateAction<boolean>>, 
+    dialogRef : React.MutableRefObject<HTMLDialogElement | null>, 
+    handleSubmit : (e: React.FormEvent) => Promise<void>,
+    handleChange : (e: React.ChangeEvent<HTMLInputElement>) => void,
+    categoryInput : string,
+    setCategoryInput : React.Dispatch<React.SetStateAction<string>>,
+    handleAddCategory : () => void,
+    handleDelCategory : (categoryDel: string) => void,
+    button : string
+} ) {
 
     const formdata = props.formData
 
-    const dialogref = props.dialogRef
-
-    const setisopen = props.setIsOpen
-    
-            const closeDialog = () => {
-                if (dialogref.current) {
-                    setisopen(false)
-                    dialogref.current.close();
-                }
-            }
+    const closeDialog = () => {
+        if (props.dialogRef.current) {
+            props.setIsOpen(false)
+            props.dialogRef.current.close();
+        }
+    }
         
-            useEffect(() => {
-                const dialog = dialogref.current;
-                if (dialog) {
-                    dialog.addEventListener("cancel", closeDialog);
-                    return () => dialog.removeEventListener("cancel", closeDialog)
-                }
-            }, []);
+    useEffect(() => {
+        const dialog = props.dialogRef.current;
+        if (dialog) {
+            dialog.addEventListener("cancel", closeDialog);
+            return () => dialog.removeEventListener("cancel", closeDialog)
+        }
+    }, []);
 
     return(
         <dialog className="edit-popup" ref={props.dialogRef}>
@@ -67,7 +82,7 @@ export default function DialogForm(props) {
                     </select>
                     <button type="button" onClick={props.handleAddCategory} className="add-cat">Add</button>
                     <div className="current-cats">
-                        {formdata.categories.map((categories: string, index: string) => (
+                        {formdata.categories.map((categories: string, index: number) => (
                             <span className="added-cat" key={index}>
                                 <button className="delete-cat" onClick={() => props.handleDelCategory(categories)}>X</button>
                                 {categories}

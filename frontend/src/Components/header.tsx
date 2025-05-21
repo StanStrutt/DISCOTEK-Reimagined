@@ -21,7 +21,7 @@ export default function Header() {
     return(
         <div className='header'>
             <div className='banner'>
-                <img className='logo' src='https://discotek.net/assets/logo.svg' alt='DISCOTEK'/>
+                <img className='logo' src='logo.svg' alt='DISCOTEK'/>
             </div>
             <div className='front-page'>
                 <div className='left-text'>
@@ -54,7 +54,7 @@ export default function Header() {
             <div className='bottom-bar'>
             <a>
                 <img className='scroll' onClick={scrollDown} /* Application of the scrolldown function and applied to a button */ 
-                src='https://discotek.net/assets/scroll.png' alt='scroll button'/>
+                src='scroll.png' alt='scroll button'/>
             </a>
         </div>
       </div>

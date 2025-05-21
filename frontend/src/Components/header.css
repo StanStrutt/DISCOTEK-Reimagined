@@ -71,7 +71,7 @@
 }
 
 .ball {
-  background: url(https://discotek.net/assets/ball.gif);
+  background: url(ball.gif);
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;

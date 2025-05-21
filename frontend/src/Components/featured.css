@@ -13,7 +13,7 @@
     position: relative;
     flex-direction: column;
     justify-content: flex-start;
-    background: url(https://discotek.net/assets/1.png);
+    background: url(Nicola.png);
     background-size: cover;
     background-position: center;
     border-radius: 15px;
@@ -34,7 +34,7 @@
 .over-image {
     z-index: -2;
     position: absolute;
-    background: url(https://discotek.net/assets/2.png);
+    background: url(NicolaAI.png);
     background-size: auto 90vh;
     background-position: center top;
     border-radius: 15px;
@@ -89,7 +89,7 @@
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    background: url(https://discotek.net/assets/3.png);
+    background: url(TextToImage.png);
     background-size: cover;
     border-radius: 15px;
     border-color: transparent;
@@ -128,7 +128,7 @@
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    background: url(https://discotek.net/assets/4.png);
+    background: url(TextEffects.png);
     background-size: cover;
     border-radius: 15px;
     border-color: transparent;

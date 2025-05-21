@@ -45,7 +45,7 @@ export default function Featured() {
   return( 
     <div className="featured"> 
       <div className="left-featured" ref={containerRef}>
-        <img className="slider" src="https://discotek.net/assets/slider.png" style={{ transform: `translateY(${cursorPosition.y - window.innerHeight * 0.02}px)` }}/> {/* this tracks the cursor position and aligns the y axis with it to make sure that the slide follows it */}
+        <img className="slider" src="slider.png" style={{ transform: `translateY(${cursorPosition.y - window.innerHeight * 0.02}px)` }}/> {/* this tracks the cursor position and aligns the y axis with it to make sure that the slide follows it */}
         <div className="over-image" style={{ height: `${cursorPosition.y}px` }}/> {/* This does a similar thing as the above element but starts overlapping one image with the other as the cursor is moved */}
         <div className="left-featured-text">
           <h3>Generative Fill</h3>
