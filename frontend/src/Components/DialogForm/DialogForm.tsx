@@ -1,47 +1,50 @@
-import "./dialogForm.css"
-import { useEffect } from "react";
+import { useEffect } from "react"
+
+import "./DialogForm.css"
 
 
 interface AddFormData {
-    _id: string;
-    name: string;
-    url: string;
-    description: string;
-    image: string;
-    categories: string[];
+    _id: string
+    name: string
+    url: string
+    description: string
+    image: string
+    categories: string[]
 }
 
-
-export default function DialogForm( props: {formData : AddFormData, 
-    setIsOpen : React.Dispatch<React.SetStateAction<boolean>>, 
-    dialogRef : React.MutableRefObject<HTMLDialogElement | null>, 
-    handleSubmit : (e: React.FormEvent) => Promise<void>,
-    handleChange : (e: React.ChangeEvent<HTMLInputElement>) => void,
-    categoryInput : string,
-    setCategoryInput : React.Dispatch<React.SetStateAction<string>>,
-    handleAddCategory : () => void,
-    handleDelCategory : (categoryDel: string) => void,
-    button : string,
-} ) {
+export default function DialogForm( 
+    props: 
+    {
+        formData : AddFormData, 
+        setIsOpen : React.Dispatch<React.SetStateAction<boolean>>, 
+        dialogRef : React.MutableRefObject<HTMLDialogElement | null>, 
+        handleSubmit : (e: React.FormEvent) => Promise<void>,
+        handleChange : (e: React.ChangeEvent<HTMLInputElement>) => void,
+        categoryInput : string,
+        setCategoryInput : React.Dispatch<React.SetStateAction<string>>,
+        handleAddCategory : () => void,
+        handleDelCategory : (categoryDel: string) => void,
+        button : string,
+    } ) {
 
     const formdata = props.formData
 
     const closeDialog = () => {
         if (props.dialogRef.current) {
             props.setIsOpen(false)
-            props.dialogRef.current.close();
+            props.dialogRef.current.close()
         }
     }
         
     useEffect(() => {
-        const dialog = props.dialogRef.current;
+        const dialog = props.dialogRef.current
         if (dialog) {
-            dialog.addEventListener("cancel", closeDialog);
+            dialog.addEventListener("cancel", closeDialog)
             return () => dialog.removeEventListener("cancel", closeDialog)
         }
-    }, []);
+    }, [])
 
-    return(
+    return (
         <dialog className="edit-popup" ref={props.dialogRef}>
             <form onSubmit={props.handleSubmit} className="Post-form">
                 <button className="close-pop" type="button" onClick={closeDialog}>X</button>
@@ -97,4 +100,5 @@ export default function DialogForm( props: {formData : AddFormData,
             </form>
         </dialog>
     )
-};
+}
+

@@ -12,26 +12,35 @@ interface AddFormData {
 
 export default function UpdateContent() {
 
-    const [formData, setFormData] = useState<AddFormData>({ _id: "", name: "", url: "", description: "", image: "", categories: [] });
     const [categoryInput, setCategoryInput] = useState<string>("");
     const [message, setMessage] = useState<string>("");
     const [isOpen, setIsOpen] = useState<boolean>(false)
+    const [formData, setFormData] = useState<AddFormData>(
+        {
+            _id: "",
+            name: "",
+            url: "",
+            description: "",
+            image: "",
+            categories: [] 
+        }
+    )
 
     useEffect(() => {
         if (isOpen) {
-            document.body.style.overflow = "hidden";
+            document.body.style.overflow = "hidden"
         } else {
-            document.body.style.overflow = "unset";
+            document.body.style.overflow = "unset"
         }
     }, [isOpen])
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        setFormData({ ...formData, [e.target.name]: e.target.value });
-    };
+        setFormData({ ...formData, [e.target.name]: e.target.value })
+    }
 
     const handleAddCategory = () => {
         if (categoryInput.trim() !== "") {
-            setFormData({ ...formData, categories: [...formData.categories, categoryInput.trim()] });
+            setFormData({ ...formData, categories: [...formData.categories, categoryInput.trim()] })
             setCategoryInput("")
         }
     }

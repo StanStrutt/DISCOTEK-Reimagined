@@ -1,4 +1,4 @@
-footer{
+footer {
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -8,7 +8,7 @@ footer{
     width: 100%;
 }
 
-.DA {
+.da {
     height: auto;
     width: auto;
 }

@@ -1,8 +1,12 @@
 import { useRef } from "react"
+
 import axios from "axios"
-import UpdateContent from "./updateContent"
-import DialogForm from "./dialogForm"
+
 import Get from "../services/api-calls"
+import UpdateContent from "./updateContent"
+
+import DialogForm from "./DialogForm"
+
 
 
 
@@ -42,7 +46,7 @@ export default function AddContent() {
                 setMessage("Something went wrong");
             }
         }
-        fetchData()
+        await fetchData()
         dialogRef.current?.close()
         setIsOpen(false)
     }

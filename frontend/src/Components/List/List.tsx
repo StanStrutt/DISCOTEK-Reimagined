@@ -1,37 +1,51 @@
-import "./list.css"
-import Get from "../services/api-calls"
-import UpdateContent from "./updateContent"
-import axios from "axios"
 import { useRef } from "react"
-import DialogForm from "./dialogForm"
-import AddContent from "./addContent"
-    
+
+import axios from "axios"
+
+import "./List.css"
+
+import Get from "../../services/api-calls"
+import UpdateContent from "../updateContent"
+
+import DialogForm from "../DialogForm"
+import AddContent from "../addContent"
 
 export default function List() { 
 
-    const VITE_URL = import.meta.env.VITE_API_URL;
+    const VITE_URL = import.meta.env.VITE_API_URL
 
     const {filteredData, handleTopicClick, error, fetchData} = Get()
 
-    const {handleAddCategory, formData, setMessage, setFormData, categoryInput, setCategoryInput, handleChange, handleDelCategory, setIsOpen} = UpdateContent()
+    const {
+        handleAddCategory,
+        formData,
+        setMessage,
+        setFormData,
+        categoryInput,
+        setCategoryInput,
+        handleChange,
+        handleDelCategory,
+        setIsOpen,
+        } = UpdateContent()
     
     const dialogRef = useRef<HTMLDialogElement | null>(null)
 
     const handleSubmit = async (e: React.FormEvent) => {
-        e.preventDefault();
+        e.preventDefault()
             
         try {
             const response = await axios.put(`${VITE_URL}/update/${formData._id}`, formData, {
                 headers: { "Content-Type": "application/json" },
-            });
+            })
             
-            setMessage(response.data.message);
-            setFormData({ _id: "", name: "", url: "", description: "", image: "", categories: [] }); // Reset form after submission
-            } catch (err) {
-                if (err instanceof Error) {
-                    setMessage(err.message)
+            setMessage(response.data.message)
+            // Reset form after submission
+            setFormData({ _id: "", name: "", url: "", description: "", image: "", categories: [] })
+        } catch (err) {
+            if (err instanceof Error) {
+                setMessage(err.message)
             } else {
-                setMessage("Something went wrong");
+                setMessage("Something went wrong")
             }
         }
         fetchData()
@@ -46,58 +60,67 @@ export default function List() {
                 setFormData(response.data)
                 setMessage(response.data.message)
                 if (dialogRef.current) {
-                    setIsOpen(true);
-                    dialogRef.current.showModal();
-                    const firstInput = dialogRef.current.querySelector("input");
+                    setIsOpen(true)
+                    dialogRef.current.showModal()
+                    const firstInput = dialogRef.current.querySelector("input")
                     firstInput?.focus()
                 }
-            } catch (err) {
-                if (err instanceof Error) {
-                    setMessage(err.message)
-                } else {
-                    setMessage("Something went wrong")
-                }
+        } catch (err) {
+            if (err instanceof Error) {
+                setMessage(err.message)
+            } else {
+                setMessage("Something went wrong")
+            }
         }
-    };
+    }
 
     const handleIdDelete = async (value: string) => {
-
         try {
             const response = await axios.get(`${VITE_URL}/get/${value}`)
                 setFormData(response.data)
                 setMessage(response.data.message)
-            } catch (err) {
-                if (err instanceof Error) {
-                    setMessage(err.message)
-                } else {
-                    setMessage("Something went wrong")
-                }
+        } catch (err) {
+            if (err instanceof Error) {
+                setMessage(err.message)
+            } else {
+                setMessage("Something went wrong")
             }
+        }
         
-        const confirmDelete = window.confirm(`Are you sure you want to delete this?`);
-        if (!confirmDelete) return;
+        const confirmDelete = window.confirm(`Are you sure you want to delete this?`)
+        if (!confirmDelete) return
 
         try {
             const response = await axios.delete(`${VITE_URL}/delete/${value}`)
                 setFormData(response.data)
                 setMessage(response.data.message)
-            } catch (err) {
-                if (err instanceof Error) {
-                    setMessage(err.message)
-                } else {
-                    setMessage("Something went wrong")
-                }
+        } catch (err) {
+            if (err instanceof Error) {
+                setMessage(err.message)
+            } else {
+                setMessage("Something went wrong")
             }
-    };
+        }
+    }
 
-    return(
+    return (
         <>  
-            <DialogForm formData={formData} dialogRef={dialogRef} handleSubmit={handleSubmit} handleAddCategory={handleAddCategory} button={"Update"}
-            categoryInput={categoryInput} setCategoryInput={setCategoryInput} handleChange={handleChange} handleDelCategory={handleDelCategory} setIsOpen={setIsOpen}/>
-            <div className="list-info" id="Explore">
+            <DialogForm
+                formData={formData}
+                dialogRef={dialogRef}
+                handleSubmit={handleSubmit}
+                handleAddCategory={handleAddCategory}
+                button={"Update"}
+                categoryInput={categoryInput}
+                setCategoryInput={setCategoryInput}
+                handleChange={handleChange}
+                handleDelCategory={handleDelCategory}
+                setIsOpen={setIsOpen}
+            />
+            <div className="list-info" id="explore">
                 <div className="list">
                     <div className="add-to-explore">
-                        <h2 className="explore">EXPLORE</h2>
+                        <h2 className="explore">Explore</h2>
                         <AddContent/>
                     </div>
                     <div className="categories">
@@ -139,24 +162,34 @@ export default function List() {
                 </div>
                 <div className="info"> 
                     {error}
-                    {filteredData.map((resource) => (
-                        <div className="card-holder" key={resource._id}>
-                            <div className="card-buttons">
-                                <a className="button-left" onClick={() => handleIdClick(resource._id)}>
-                                    <img className="edit-img" src="https://static.thenounproject.com/png/3406050-200.png" height="20px"/>
-                                </a>
-                                <a className="button-right" onClick={() => handleIdDelete(resource._id)}>
-                                    <img className="delete-img" src="https://cdn-icons-png.flaticon.com/512/484/484662.png" height="20px"/>
+                    {
+                        filteredData.map((resource) => (
+                            <div className="card-holder" key={resource._id}>
+                                <div className="card-buttons">
+                                    <a className="button-left" onClick={() => handleIdClick(resource._id)}>
+                                        <img
+                                            className="edit-img"
+                                            src="https://static.thenounproject.com/png/3406050-200.png"
+                                            height="20px"
+                                        />
+                                    </a>
+                                    <a className="button-right" onClick={() => handleIdDelete(resource._id)}>
+                                        <img 
+                                            className="delete-img"
+                                            src="https://cdn-icons-png.flaticon.com/512/484/484662.png"
+                                            height="20px"
+                                        />
+                                    </a>
+                                </div>
+                                <a className="card-link" target="_blank" href={resource.url}>
+                                    <div className="card-image" style={{background: `url(${resource.image})`}}/>
+                                    <hr/>
+                                    <h3 className="card-title">{resource.name}</h3>
+                                    <p className="card-desc">{resource.description}</p>
                                 </a>
                             </div>
-                            <a className="card-link" target="_blank" href={resource.url}>
-                                <div className="card-image" style={{background: `url(${resource.image})`}}/>
-                                <hr/>
-                                <h3 className="card-title">{resource.name}</h3>
-                                <p className="card-desc">{resource.description}</p>
-                            </a>
-                        </div>
-                    ))}
+                        ))
+                    }
                 </div>               
             </div>
         </>
