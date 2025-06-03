@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react"
+import { useState } from "react"
 
 
 interface AddFormData {
@@ -25,14 +25,6 @@ export default function UpdateContent() {
             categories: [] 
         }
     )
-
-    useEffect(() => {
-        if (isOpen) {
-            document.body.style.overflow = "hidden"
-        } else {
-            document.body.style.overflow = "unset"
-        }
-    }, [isOpen])
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         setFormData({ ...formData, [e.target.name]: e.target.value })

@@ -28,7 +28,7 @@ const Router = router()
                 name: req.body.name,
                 url: req.body.url,
                 description: req.body.description,
-                image: req.body.image,
+                imageLink: req.body.imageLink,
                 categories: req.body.categories
             });
             await resource.save();
@@ -59,7 +59,7 @@ const Router = router()
                     name: req.body.name,
                     url: req.body.url,
                     description: req.body.description,
-                    image: req.body.image,
+                    imageLink: req.body.imageLink,
                     categories: req.body.categories
                 },
                 { new: true }

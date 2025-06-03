@@ -1,6 +1,14 @@
 .edit-popup {
     background-color: rgb(214, 214, 214);
     border-radius: 5px;
+    border: 2px solid black;
+    position: fixed;
+    margin: auto;
+    z-index: 10;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: all !important;
 }
 
 .add-cat {

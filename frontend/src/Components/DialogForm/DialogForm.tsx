@@ -1,63 +1,153 @@
-import { useEffect } from "react"
+import { useState, useEffect } from "react"
 
 import "./DialogForm.css"
 
+// import Get from "../../services/api-calls"
+// import axios from "axios"
 
-interface AddFormData {
-    _id: string
+interface DialogFormProps {
+    id: string | null
     name: string
+    setName: React.Dispatch<React.SetStateAction<string>>
     url: string
+    setUrl: React.Dispatch<React.SetStateAction<string>>
     description: string
-    image: string
+    setDescription: React.Dispatch<React.SetStateAction<string>>
+    imageLink: string
+    setImageLink: React.Dispatch<React.SetStateAction<string>>
     categories: string[]
+    setCategories: React.Dispatch<React.SetStateAction<string[]>>
+    visible: boolean
+    setVisible: React.Dispatch<React.SetStateAction<boolean>>
+    buttonText: "Create" | "Update"
+    handleSubmit: (e: React.FormEvent) => Promise<void>
 }
 
-export default function DialogForm( 
-    props: 
-    {
-        formData : AddFormData, 
-        setIsOpen : React.Dispatch<React.SetStateAction<boolean>>, 
-        dialogRef : React.MutableRefObject<HTMLDialogElement | null>, 
-        handleSubmit : (e: React.FormEvent) => Promise<void>,
-        handleChange : (e: React.ChangeEvent<HTMLInputElement>) => void,
-        categoryInput : string,
-        setCategoryInput : React.Dispatch<React.SetStateAction<string>>,
-        handleAddCategory : () => void,
-        handleDelCategory : (categoryDel: string) => void,
-        button : string,
-    } ) {
+export default function DialogForm({
+    id,
+    name,
+    setName,
+    url,
+    setUrl,
+    description,
+    setDescription,
+    imageLink,
+    setImageLink,
+    categories,
+    setCategories,
+    visible,
+    setVisible,
+    buttonText,
+    handleSubmit,
+}: DialogFormProps ) {
 
-    const formdata = props.formData
+    // const VITE_URL = import.meta.env.VITE_API_URL
 
-    const closeDialog = () => {
-        if (props.dialogRef.current) {
-            props.setIsOpen(false)
-            props.dialogRef.current.close()
-        }
+    const [categoryInput, setCategoryInput] = useState<string>("");
+    // const [errMessage, setErrMessage] = useState<string>("")
+
+    // const {fetchData} = Get()
+
+    const addCategory = () => {
+        setCategories((prevCategories) => [
+            ...prevCategories,
+            categoryInput,
+        ])
+        setCategoryInput("")
     }
-        
+
+    const deleteCategory = (category: string) => {
+        setCategories((prevCategories) => prevCategories.filter((c) => c !== category))
+    }
+
     useEffect(() => {
-        const dialog = props.dialogRef.current
-        if (dialog) {
-            dialog.addEventListener("cancel", closeDialog)
-            return () => dialog.removeEventListener("cancel", closeDialog)
+        if (visible) {
+            document.body.style.overflow = "hidden"
+            document.body.style.pointerEvents = "none"
+        } else {
+            document.body.style.overflow = "unset"
+            document.body.style.pointerEvents = "all"
         }
-    }, [])
+    }, [visible])
+
+    if (!visible) {
+        return null
+    }
+
+    // const handleUpdate = async (e: React.FormEvent) => {
+    //     e.preventDefault()
+            
+    //     try {
+    //         const response = await axios.put(`${VITE_URL}/update/${id}`, {id, name, url, description, imageLink, categories}, {
+    //             headers: { "Content-Type": "application/json" },
+    //         })
+            
+    //         setErrMessage(response.data.message)
+    //     } catch (err) {
+    //         if (err instanceof Error) {
+    //             setErrMessage(err.message)
+    //         } else {
+    //             setErrMessage("Something went wrong")
+    //         }
+    //     }
+    //     fetchData()
+    //     setVisible(false)
+    // }
+
+    // const handleSubmit = async (e: React.FormEvent) => {
+    //     e.preventDefault();
+        
+    //     try {
+    //         const response = await axios.post(`${VITE_URL}/submit`, {id, name, url, description, imageLink, categories}, {
+    //             headers: { "Content-Type": "application/json" },
+    //         })
+        
+    //         setErrMessage(response.data.message);                  
+    //     } catch (err) {
+    //         if (err instanceof Error) {
+    //             setErrMessage(err.message)
+    //         } else {
+    //             setErrMessage("Something went wrong");
+    //         }
+    //     }
+    //     fetchData()
+    //     setVisible(false)
+    // }
 
     return (
-        <dialog className="edit-popup" ref={props.dialogRef}>
-            <form onSubmit={props.handleSubmit} className="Post-form">
-                <button className="close-pop" type="button" onClick={closeDialog}>X</button>
-                <input type="text" name="name" placeholder="Enter name" value={formdata.name} onChange={props.handleChange}
+        <div className="edit-popup">
+            <form onSubmit={handleSubmit} className="Post-form">
+                <button className="close-pop" type="button" onClick={() => setVisible(false)}>X</button>
+                <input
+                    type="text"
+                    name="name"
+                    placeholder="Enter name" 
+                    value={name} 
+                    onChange={(e) => setName(e.target.value)}
                 />
-                <input type="text" name="url" placeholder="Enter url" value={formdata.url} onChange={props.handleChange}
+                <input
+                    type="text"
+                    name="url"
+                    placeholder="Enter url"
+                    value={url}
+                    onChange={(e) => setUrl(e.target.value)}
                 />
-                <input type="text" name="description" placeholder="Enter description" value={formdata.description} onChange={props.handleChange}
+                <input
+                    type="text"
+                    name="description"
+                    placeholder="Enter description"
+                    value={description}
+                    onChange={(e) => setDescription(e.target.value)}
                 />
-                <input type="text" name="image" placeholder="Enter image link" value={formdata.image} onChange={props.handleChange}
+                <input
+                    type="text"
+                    name="imageLink"
+                    placeholder="Enter image link"
+                    value={imageLink}
+                    onChange={(e) => setImageLink(e.target.value)}
                 />
                 <div className="category-section">
-                    <select className="categories-select" name="categories" value={props.categoryInput} onChange={(e) => props.setCategoryInput(e.target.value)}>
+                    <select className="categories-select" name="categories" value={categoryInput} onChange={(e) => setCategoryInput(e.target.value)}>
                         <option hidden selected value="">Enter Catergories</option>
                         <option value="Accessibility">Accessibility</option>
                         <option value="AI">AI</option>
@@ -84,21 +174,20 @@ export default function DialogForm(
                         <option value="Free Trial">Free Trial</option>
                         <option value="Paid">Paid</option>
                     </select>
-                    <button type="button" onClick={props.handleAddCategory} className="add-cat">Add</button>
+                    <button type="button" onClick={() => addCategory()} className="add-cat">Add</button>
                     <div className="current-cats">
-                        {formdata.categories.map((categories: string, index: number) => (
+                        {categories.map((category: string, index: number) => (
                             <span className="added-cat" key={index}>
-                                <button className="delete-cat" onClick={() => props.handleDelCategory(categories)}>X</button>
-                                {categories}
+                                <button type="button" className="delete-cat" onClick={() => deleteCategory(category)}>X</button>
+                                {category}
                             </span>
                         ))}
                     </div>
                 </div>
                 <div className="submit-button">
-                    <button className="submitting-button" type="submit">{props.button}</button>
+                    <button className="submitting-button" type="submit">{buttonText}</button>
                 </div>
             </form>
-        </dialog>
+        </div>
     )
 }
-

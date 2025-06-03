@@ -1,127 +1,153 @@
-import { useRef } from "react"
+import { useState } from "react"
 
 import axios from "axios"
 
 import "./List.css"
 
 import Get from "../../services/api-calls"
-import UpdateContent from "../updateContent"
 
 import DialogForm from "../DialogForm"
-import AddContent from "../addContent"
 
 export default function List() { 
 
     const VITE_URL = import.meta.env.VITE_API_URL
 
-    const {filteredData, handleTopicClick, error, fetchData} = Get()
+    const [id, setId] = useState<string | null>(null)
+    const [name, setName] = useState<string>("")
+    const [url, setUrl] = useState<string>("")
+    const [description, setDescription] = useState<string>("")
+    const [imageLink, setImageLink] = useState<string>("")
+    const [categories, setCategories] = useState<string[]>([])
+    const [visible, setVisible] = useState<boolean>(false)
+    const [buttonText, setButtonText] = useState<"Create" | "Update">("Create")
 
-    const {
-        handleAddCategory,
-        formData,
-        setMessage,
-        setFormData,
-        categoryInput,
-        setCategoryInput,
-        handleChange,
-        handleDelCategory,
-        setIsOpen,
-        } = UpdateContent()
-    
-    const dialogRef = useRef<HTMLDialogElement | null>(null)
+    const [errMessage, setErrMessage] = useState<string>("")
 
-    const handleSubmit = async (e: React.FormEvent) => {
+    const {filteredData, handleTopicClick, fetchData} = Get()
+
+    const handleUpdate = async (e: React.FormEvent) => {
         e.preventDefault()
             
         try {
-            const response = await axios.put(`${VITE_URL}/update/${formData._id}`, formData, {
+            const response = await axios.put(`${VITE_URL}/update/${id}`, {id, name, url, description, imageLink, categories}, {
                 headers: { "Content-Type": "application/json" },
             })
             
-            setMessage(response.data.message)
-            // Reset form after submission
-            setFormData({ _id: "", name: "", url: "", description: "", image: "", categories: [] })
+            setErrMessage(response.data.message)
         } catch (err) {
             if (err instanceof Error) {
-                setMessage(err.message)
+                setErrMessage(err.message)
             } else {
-                setMessage("Something went wrong")
+                setErrMessage("Something went wrong")
             }
         }
         fetchData()
-        dialogRef.current?.close()
-        setIsOpen(false)
+        setVisible(false)
+    }
+
+    const handleSubmit = async (e: React.FormEvent) => {
+        e.preventDefault();
+        
+        try {
+            const response = await axios.post(`${VITE_URL}/submit`, {id, name, url, description, imageLink, categories}, {
+                headers: { "Content-Type": "application/json" },
+            })
+        
+            setErrMessage(response.data.message);                  
+        } catch (err) {
+            if (err instanceof Error) {
+                setErrMessage(err.message)
+            } else {
+                setErrMessage("Something went wrong");
+            }
+        }
+        fetchData()
+        setVisible(false)
     }
 
     const handleIdClick = async (value: string) => {
 
         try {
             const response = await axios.get(`${VITE_URL}/get/${value}`)
-                setFormData(response.data)
-                setMessage(response.data.message)
-                if (dialogRef.current) {
-                    setIsOpen(true)
-                    dialogRef.current.showModal()
-                    const firstInput = dialogRef.current.querySelector("input")
-                    firstInput?.focus()
-                }
+            setId(response.data._id)
+            setName(response.data.name)
+            setUrl(response.data.url)
+            setDescription(response.data.description)
+            setImageLink(response.data.image)
+            setCategories(response.data.categories)
+            setVisible(true)
+            setButtonText("Update")
         } catch (err) {
             if (err instanceof Error) {
-                setMessage(err.message)
+                setErrMessage(err.message)
             } else {
-                setMessage("Something went wrong")
+                setErrMessage("Something went wrong")
             }
         }
+        fetchData()
     }
 
     const handleIdDelete = async (value: string) => {
-        try {
-            const response = await axios.get(`${VITE_URL}/get/${value}`)
-                setFormData(response.data)
-                setMessage(response.data.message)
-        } catch (err) {
-            if (err instanceof Error) {
-                setMessage(err.message)
-            } else {
-                setMessage("Something went wrong")
-            }
-        }
-        
+
         const confirmDelete = window.confirm(`Are you sure you want to delete this?`)
         if (!confirmDelete) return
 
         try {
             const response = await axios.delete(`${VITE_URL}/delete/${value}`)
-                setFormData(response.data)
-                setMessage(response.data.message)
+            setId(response.data._id)
+            setName(response.data.name)
+            setUrl(response.data.url)
+            setDescription(response.data.description)
+            setImageLink(response.data.image)
+            setCategories(response.data.categories)
+            setErrMessage(response.data.message)
         } catch (err) {
             if (err instanceof Error) {
-                setMessage(err.message)
+                setErrMessage(err.message)
             } else {
-                setMessage("Something went wrong")
+                setErrMessage("Something went wrong")
             }
         }
+        fetchData()
     }
+
+    const addContent = () => {
+        setName("")
+        setUrl("")
+        setDescription("")
+        setImageLink("")
+        setCategories([])
+        setVisible(true)
+        setButtonText("Create")
+    }
+
+    console.log(errMessage)
 
     return (
         <>  
             <DialogForm
-                formData={formData}
-                dialogRef={dialogRef}
+                id={id}
+                name={name}
+                setName={setName}
+                url={url}
+                setUrl={setUrl}
+                description={description}
+                setDescription={setDescription}
+                imageLink={imageLink}
+                setImageLink={setImageLink}
+                categories={categories}
+                setCategories={setCategories}
+                visible={visible}
+                setVisible={setVisible}
+                buttonText={buttonText}
                 handleSubmit={handleSubmit}
-                handleAddCategory={handleAddCategory}
-                button={"Update"}
-                categoryInput={categoryInput}
-                setCategoryInput={setCategoryInput}
-                handleChange={handleChange}
-                handleDelCategory={handleDelCategory}
-                setIsOpen={setIsOpen}
             />
             <div className="list-info" id="explore">
                 <div className="list">
                     <div className="add-to-explore">
                         <h2 className="explore">Explore</h2>
-                        <AddContent/>
+                        {/* <AddContent/> */}
+                        <button type="button" onClick={() => addContent()}>Create Resource</button>
                     </div>
                     <div className="categories">
                         <div className="cat-list">
@@ -161,7 +187,6 @@ export default function List() {
                     </div>
                 </div>
                 <div className="info"> 
-                    {error}
                     {
                         filteredData.map((resource) => (
                             <div className="card-holder" key={resource._id}>
