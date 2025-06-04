@@ -20,7 +20,7 @@ interface DialogFormProps {
     visible: boolean
     setVisible: React.Dispatch<React.SetStateAction<boolean>>
     buttonText: "Create" | "Update"
-    handleSubmit: (e: React.FormEvent) => Promise<void>
+    onSubmit: (e: React.FormEvent) => Promise<void>
 }
 
 export default function DialogForm({
@@ -38,15 +38,10 @@ export default function DialogForm({
     visible,
     setVisible,
     buttonText,
-    handleSubmit,
+    onSubmit,
 }: DialogFormProps ) {
 
-    // const VITE_URL = import.meta.env.VITE_API_URL
-
     const [categoryInput, setCategoryInput] = useState<string>("");
-    // const [errMessage, setErrMessage] = useState<string>("")
-
-    // const {fetchData} = Get()
 
     const addCategory = () => {
         setCategories((prevCategories) => [
@@ -74,49 +69,9 @@ export default function DialogForm({
         return null
     }
 
-    // const handleUpdate = async (e: React.FormEvent) => {
-    //     e.preventDefault()
-            
-    //     try {
-    //         const response = await axios.put(`${VITE_URL}/update/${id}`, {id, name, url, description, imageLink, categories}, {
-    //             headers: { "Content-Type": "application/json" },
-    //         })
-            
-    //         setErrMessage(response.data.message)
-    //     } catch (err) {
-    //         if (err instanceof Error) {
-    //             setErrMessage(err.message)
-    //         } else {
-    //             setErrMessage("Something went wrong")
-    //         }
-    //     }
-    //     fetchData()
-    //     setVisible(false)
-    // }
-
-    // const handleSubmit = async (e: React.FormEvent) => {
-    //     e.preventDefault();
-        
-    //     try {
-    //         const response = await axios.post(`${VITE_URL}/submit`, {id, name, url, description, imageLink, categories}, {
-    //             headers: { "Content-Type": "application/json" },
-    //         })
-        
-    //         setErrMessage(response.data.message);                  
-    //     } catch (err) {
-    //         if (err instanceof Error) {
-    //             setErrMessage(err.message)
-    //         } else {
-    //             setErrMessage("Something went wrong");
-    //         }
-    //     }
-    //     fetchData()
-    //     setVisible(false)
-    // }
-
     return (
         <div className="edit-popup">
-            <form onSubmit={handleSubmit} className="Post-form">
+            <form onSubmit={onSubmit} className="Post-form">
                 <button className="close-pop" type="button" onClick={() => setVisible(false)}>X</button>
                 <input
                     type="text"

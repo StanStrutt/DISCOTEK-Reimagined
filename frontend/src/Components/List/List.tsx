@@ -73,7 +73,7 @@ export default function List() {
             setName(response.data.name)
             setUrl(response.data.url)
             setDescription(response.data.description)
-            setImageLink(response.data.image)
+            setImageLink(response.data.imageLink)
             setCategories(response.data.categories)
             setVisible(true)
             setButtonText("Update")
@@ -98,7 +98,7 @@ export default function List() {
             setName(response.data.name)
             setUrl(response.data.url)
             setDescription(response.data.description)
-            setImageLink(response.data.image)
+            setImageLink(response.data.imageLink)
             setCategories(response.data.categories)
             setErrMessage(response.data.message)
         } catch (err) {
@@ -123,6 +123,8 @@ export default function List() {
 
     console.log(errMessage)
 
+    const onSubmit = (buttonText === "Create") ? handleSubmit : handleUpdate
+
     return (
         <>  
             <DialogForm
@@ -140,7 +142,7 @@ export default function List() {
                 visible={visible}
                 setVisible={setVisible}
                 buttonText={buttonText}
-                handleSubmit={handleSubmit}
+                onSubmit={onSubmit}
             />
             <div className="list-info" id="explore">
                 <div className="list">
@@ -207,7 +209,7 @@ export default function List() {
                                     </a>
                                 </div>
                                 <a className="card-link" target="_blank" href={resource.url}>
-                                    <div className="card-image" style={{background: `url(${resource.image})`}}/>
+                                    <div className="card-image" style={{background: `url(${resource.imageLink})`}}/>
                                     <hr/>
                                     <h3 className="card-title">{resource.name}</h3>
                                     <p className="card-desc">{resource.description}</p>

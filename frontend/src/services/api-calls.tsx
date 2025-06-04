@@ -6,7 +6,7 @@ interface Resources {
     name: string;
     url: string;
     description: string;
-    image: string;
+    imageLink: string;
     categories: string[];
 }
 
