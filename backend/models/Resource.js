@@ -5,7 +5,7 @@ const ResourceSchema = new mongoose.Schema({
     url: { type: String, required: true },
     description: { type: String, required: true },
     imageLink: { type: String, required: true },
-    categories: { type: [String], required: true},
+    categories: { type: [String], required: true },
     __v: { type: Number, select: false } 
 })
 

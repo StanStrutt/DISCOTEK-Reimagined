@@ -1,16 +1,27 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
 
 import axios from "axios"
 
 import "./List.css"
 
-import Get from "../../services/api-calls"
-
 import DialogForm from "../DialogForm"
+
+interface Resources {
+    _id: string;
+    name: string;
+    url: string;
+    description: string;
+    imageLink: string;
+    categories: string[];
+}
 
 export default function List() { 
 
     const VITE_URL = import.meta.env.VITE_API_URL
+
+    const [data, setData] = useState<Resources[]>([])
+    const [topic, setTopic] = useState<string>("")
+    const [filteredData, setFilteredData] = useState<Resources[]>(data)
 
     const [id, setId] = useState<string | null>(null)
     const [name, setName] = useState<string>("")
@@ -18,12 +29,42 @@ export default function List() {
     const [description, setDescription] = useState<string>("")
     const [imageLink, setImageLink] = useState<string>("")
     const [categories, setCategories] = useState<string[]>([])
+    const [categoryInput, setCategoryInput] = useState<string>("");
     const [visible, setVisible] = useState<boolean>(false)
     const [buttonText, setButtonText] = useState<"Create" | "Update">("Create")
 
     const [errMessage, setErrMessage] = useState<string>("")
 
-    const {filteredData, handleTopicClick, fetchData} = Get()
+    const fetchData = async () => {
+        try {
+            const response = await axios.get(`${VITE_URL}/resources`)
+            setData(response.data)
+        } catch (err) {
+            if (err instanceof Error) {
+                setErrMessage(err.message)
+            } else {
+                setErrMessage("Something went wrong")
+            }
+        }
+    }
+
+    useEffect(() => {
+        fetchData()
+    }, [VITE_URL])
+
+    useEffect(() => {
+        if (topic) {
+            const filtered = data.filter((resource) =>
+            resource.categories.includes(topic))
+            setFilteredData(filtered)
+        } else {
+            setFilteredData(data)
+        }
+    }, [topic, data])
+
+    const handleTopicClick = (value: string) => {
+        setTopic(value)
+    }
 
     const handleUpdate = async (e: React.FormEvent) => {
         e.preventDefault()
@@ -46,19 +87,19 @@ export default function List() {
     }
 
     const handleSubmit = async (e: React.FormEvent) => {
-        e.preventDefault();
+        e.preventDefault()
         
         try {
             const response = await axios.post(`${VITE_URL}/submit`, {id, name, url, description, imageLink, categories}, {
                 headers: { "Content-Type": "application/json" },
             })
         
-            setErrMessage(response.data.message);                  
+            setErrMessage(response.data.message)               
         } catch (err) {
             if (err instanceof Error) {
                 setErrMessage(err.message)
             } else {
-                setErrMessage("Something went wrong");
+                setErrMessage("Something went wrong")
             }
         }
         fetchData()
@@ -117,6 +158,7 @@ export default function List() {
         setDescription("")
         setImageLink("")
         setCategories([])
+        setCategoryInput("")
         setVisible(true)
         setButtonText("Create")
     }
@@ -128,7 +170,6 @@ export default function List() {
     return (
         <>  
             <DialogForm
-                id={id}
                 name={name}
                 setName={setName}
                 url={url}
@@ -139,6 +180,8 @@ export default function List() {
                 setImageLink={setImageLink}
                 categories={categories}
                 setCategories={setCategories}
+                categoryInput={categoryInput}
+                setCategoryInput={setCategoryInput}
                 visible={visible}
                 setVisible={setVisible}
                 buttonText={buttonText}

@@ -2,11 +2,7 @@ import { useState, useEffect } from "react"
 
 import "./DialogForm.css"
 
-// import Get from "../../services/api-calls"
-// import axios from "axios"
-
 interface DialogFormProps {
-    id: string | null
     name: string
     setName: React.Dispatch<React.SetStateAction<string>>
     url: string
@@ -21,10 +17,11 @@ interface DialogFormProps {
     setVisible: React.Dispatch<React.SetStateAction<boolean>>
     buttonText: "Create" | "Update"
     onSubmit: (e: React.FormEvent) => Promise<void>
+    categoryInput: string
+    setCategoryInput: React.Dispatch<React.SetStateAction<string>>
 }
 
 export default function DialogForm({
-    id,
     name,
     setName,
     url,
@@ -39,16 +36,20 @@ export default function DialogForm({
     setVisible,
     buttonText,
     onSubmit,
+    categoryInput,
+    setCategoryInput,
 }: DialogFormProps ) {
 
-    const [categoryInput, setCategoryInput] = useState<string>("");
+    const [buttonStatus, setButtonStatus] = useState<boolean>(true)
 
     const addCategory = () => {
-        setCategories((prevCategories) => [
-            ...prevCategories,
-            categoryInput,
-        ])
-        setCategoryInput("")
+        if (categoryInput !== "") {
+            setCategories((prevCategories) => [
+                ...prevCategories,
+                categoryInput,
+            ])
+            setCategoryInput("")
+        }
     }
 
     const deleteCategory = (category: string) => {
@@ -65,20 +66,29 @@ export default function DialogForm({
         }
     }, [visible])
 
+    useEffect(()=> {
+        if (name.length && url.length && description.length && imageLink.length && categories.length !== 0) {
+            setButtonStatus(false)
+        } else {
+            setButtonStatus(true)
+        }
+    }, [name.length, url.length, description.length, imageLink.length, categories.length])
+
     if (!visible) {
         return null
     }
 
     return (
         <div className="edit-popup">
-            <form onSubmit={onSubmit} className="Post-form">
+            <form onSubmit={onSubmit} className="post-form">
                 <button className="close-pop" type="button" onClick={() => setVisible(false)}>X</button>
                 <input
                     type="text"
                     name="name"
-                    placeholder="Enter name" 
-                    value={name} 
+                    placeholder="Enter name"
+                    value={name}
                     onChange={(e) => setName(e.target.value)}
+                    
                 />
                 <input
                     type="text"
@@ -86,6 +96,7 @@ export default function DialogForm({
                     placeholder="Enter url"
                     value={url}
                     onChange={(e) => setUrl(e.target.value)}
+                    
                 />
                 <input
                     type="text"
@@ -93,6 +104,7 @@ export default function DialogForm({
                     placeholder="Enter description"
                     value={description}
                     onChange={(e) => setDescription(e.target.value)}
+                    
                 />
                 <input
                     type="text"
@@ -100,6 +112,7 @@ export default function DialogForm({
                     placeholder="Enter image link"
                     value={imageLink}
                     onChange={(e) => setImageLink(e.target.value)}
+                    
                 />
                 <div className="category-section">
                     <select className="categories-select" name="categories" value={categoryInput} onChange={(e) => setCategoryInput(e.target.value)}>
@@ -140,7 +153,7 @@ export default function DialogForm({
                     </div>
                 </div>
                 <div className="submit-button">
-                    <button className="submitting-button" type="submit">{buttonText}</button>
+                    <button className="submitting-button" type="submit" disabled={buttonStatus}>{buttonText}</button>
                 </div>
             </form>
         </div>
