@@ -136,11 +136,6 @@ export default function List() {
         try {
             const response = await axios.delete(`${VITE_URL}/delete/${value}`)
             setId(response.data._id)
-            setName(response.data.name)
-            setUrl(response.data.url)
-            setDescription(response.data.description)
-            setImageLink(response.data.imageLink)
-            setCategories(response.data.categories)
             setErrMessage(response.data.message)
         } catch (err) {
             if (err instanceof Error) {
