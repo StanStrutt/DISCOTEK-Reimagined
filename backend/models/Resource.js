@@ -1,4 +1,4 @@
-import mongoose from 'mongoose';
+import mongoose from 'mongoose'
 
 const ResourceSchema = new mongoose.Schema({
     name: { type: String, required: true },
@@ -9,4 +9,4 @@ const ResourceSchema = new mongoose.Schema({
     __v: { type: Number, select: false } 
 })
 
-export default mongoose.model('Resource', ResourceSchema);
+export default mongoose.model('Resource', ResourceSchema)

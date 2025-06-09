@@ -1,4 +1,4 @@
-import Resource from "../models/Resource.js"
+import Resource from "../models/Resource"
 import router from "express"
 
 const Router = router()

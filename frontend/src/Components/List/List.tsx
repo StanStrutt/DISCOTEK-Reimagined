@@ -186,7 +186,6 @@ export default function List() {
                 <div className="list">
                     <div className="add-to-explore">
                         <h2 className="explore">Explore</h2>
-                        {/* <AddContent/> */}
                         <button type="button" onClick={() => addContent()}>Create Resource</button>
                     </div>
                     <div className="categories">
