@@ -1,0 +1,59 @@
+
+.login-button {
+    margin-right: 1rem;
+    margin-top: 1rem;
+}
+
+.login-holder {
+    top: 0;
+    right: 0;
+    position: absolute;
+}
+
+.login-form-holder {
+    background-color: rgb(214, 214, 214);
+    border-radius: 5px;
+    border: 2px solid black;
+    position: fixed;
+    margin: auto;
+    z-index: 10;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: all !important;
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    margin: 35px;
+}
+
+.close-login {
+    width: 35px;
+    padding: 0;
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0 !important;
+    border: 0;
+}
+
+.close-login:hover {
+    background-color: red;
+    color: #fff;
+}
+
+.login-form > input {
+    margin: 1rem 0 1rem 0;
+    height: 2rem;
+}
+
+.login-form > button {
+    margin: 1rem 0 1rem 0;
+    height: 2rem;
+}
+
+.login-submit {
+    margin-top: 10px;
+}

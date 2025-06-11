@@ -3,6 +3,7 @@ import mongoose from 'mongoose';
 import cors from "cors"
 import bodyParser from 'body-parser';
 import resourcesRouter from "./api/resourcesEndpoints.js"
+import usersRouter from "./api/userEndpoints.js"
 
 
 const app = express();
@@ -10,6 +11,7 @@ app.use(cors());
 app.use(bodyParser.json());
 
 app.use(resourcesRouter)
+app.use(usersRouter)
 
 mongoose.connect('mongodb://127.0.0.1:27017/resources', 
 ).then(() => {

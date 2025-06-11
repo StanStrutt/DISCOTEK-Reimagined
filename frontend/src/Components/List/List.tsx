@@ -15,7 +15,9 @@ interface Resources {
     categories: string[];
 }
 
-export default function List() { 
+export default function List({ loginCorrect }: {loginCorrect: boolean} ) { 
+
+    console.log(loginCorrect)
 
     const VITE_URL = import.meta.env.VITE_API_URL
 
@@ -135,7 +137,6 @@ export default function List() {
 
         try {
             const response = await axios.delete(`${VITE_URL}/delete/${value}`)
-            setId(response.data._id)
             setErrMessage(response.data.message)
         } catch (err) {
             if (err instanceof Error) {
@@ -186,7 +187,11 @@ export default function List() {
                 <div className="list">
                     <div className="add-to-explore">
                         <h2 className="explore">Explore</h2>
-                        <button type="button" onClick={() => addContent()}>Create Resource</button>
+                        {
+                            loginCorrect && (
+                                <button type="button" onClick={() => addContent()}>Create Resource</button>
+                            )
+                        }
                     </div>
                     <div className="categories">
                         <div className="cat-list">
@@ -229,22 +234,26 @@ export default function List() {
                     {
                         filteredData.map((resource) => (
                             <div className="card-holder" key={resource._id}>
-                                <div className="card-buttons">
-                                    <a className="button-left" onClick={() => handleIdClick(resource._id)}>
-                                        <img
-                                            className="edit-img"
-                                            src="https://static.thenounproject.com/png/3406050-200.png"
-                                            height="20px"
-                                        />
-                                    </a>
-                                    <a className="button-right" onClick={() => handleIdDelete(resource._id)}>
-                                        <img 
-                                            className="delete-img"
-                                            src="https://cdn-icons-png.flaticon.com/512/484/484662.png"
-                                            height="20px"
-                                        />
-                                    </a>
-                                </div>
+                                {
+                                    loginCorrect && (
+                                        <div className="card-buttons">
+                                            <a className="button-left" onClick={() => handleIdClick(resource._id)}>
+                                                <img
+                                                    className="edit-img"
+                                                    src="https://static.thenounproject.com/png/3406050-200.png"
+                                                    height="20px"
+                                                />
+                                            </a>
+                                            <a className="button-right" onClick={() => handleIdDelete(resource._id)}>
+                                                <img 
+                                                    className="delete-img"
+                                                    src="https://cdn-icons-png.flaticon.com/512/484/484662.png"
+                                                    height="20px"
+                                                />
+                                            </a>
+                                        </div>
+                                    )
+                                }
                                 <a className="card-link" target="_blank" href={resource.url}>
                                     <div className="card-image" style={{background: `url(${resource.imageLink})`}}/>
                                     <hr/>

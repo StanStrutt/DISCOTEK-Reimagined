@@ -1,29 +1,51 @@
-import { useState } from "react"
+import { useEffect } from "react"
 
+import "./Login.css"
 
-export default function Login() {
+interface LoginProps {
+    loginVisible: boolean
+    setLoginVisible: React.Dispatch<React.SetStateAction<boolean>>
+    username: string
+    setUsername: React.Dispatch<React.SetStateAction<string>>
+    password: string
+    setPassword: React.Dispatch<React.SetStateAction<string>>
+    handleSubmit: (e: React.FormEvent) => Promise<void>
+}
 
-    const [loginVisible, setLoginVisible] = useState<boolean>(false)
-    const [username, setUsername] = useState<string>("")
-    const [password, setPassword] = useState<string>("")
-    const [loginCorrect, setLoginCorrect] = useState<boolean>(false) 
+export default function Login({ 
+    loginVisible,
+    setLoginVisible,
+    username,
+    setUsername,
+    password,
+    setPassword,
+    handleSubmit
+}: LoginProps) {
 
-    const handleSubmit = async (e: React.FormEvent) => {
-        e.preventDefault()
+    useEffect(() => {
+        if (loginVisible) {
+            document.body.style.overflow = "hidden"
+            document.body.style.pointerEvents = "none"
+        } else {
+            document.body.style.overflow = "unset"
+            document.body.style.pointerEvents = "all"
+        }
+    }, [loginVisible])
 
+    const loginClicked = () => {
         setUsername("")
         setPassword("")
-        setLoginCorrect(true)
+        setLoginVisible(true)
     }
 
     return (
-        <>
-            <button onClick={() => setLoginVisible(true)}>Login</button>
+        <div className="login-holder">
+          <a className="login-button" onClick={() => loginClicked()}>Login</a>
             {
                 loginVisible &&(
-                    <div className="login-form">
-                        <form onSubmit={handleSubmit}>
-                            <button onClick={() => setLoginVisible(false)}>X</button>
+                    <div className="login-form-holder">
+                        <form className="login-form" onSubmit={handleSubmit}>
+                            <button className="close-login" onClick={() => setLoginVisible(false)}>X</button>
                             <input
                                 type="text"
                                 name="username"
@@ -40,11 +62,11 @@ export default function Login() {
                                 value={password}
                                 onChange={(e) => setPassword(e.target.value)}
                             />
-                            <button type="submit">Login</button>
+                            <button className="login-submit" type="submit">Login</button>
                         </form>
                     </div>
                 )
             }
-        </>
+        </div>
     )
 }
