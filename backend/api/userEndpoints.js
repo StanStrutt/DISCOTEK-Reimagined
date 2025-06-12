@@ -41,14 +41,14 @@ Router.post("/login2", async (req,res) => {
 
     try {
         const login = await bcrypt.compare(password, user.password)
-        const token = jwt.sign(JSON.stringify(user), "JWT_SECRET")
+        const token = jwt.sign({id: user._id, username: user.username, type: "user"}, "JWT_SECRET", { expiresIn: "2h"})
         if (login) {
             res.send({
                 status: "ok",
                 token: token,
             })
         } else {
-            res.json({ message: "invalid" })
+            res.json({ message: "Invalid Password" })
         }
     } catch(e) {
         console.log(e)

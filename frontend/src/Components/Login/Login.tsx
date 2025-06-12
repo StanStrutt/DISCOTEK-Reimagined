@@ -42,7 +42,7 @@ export default function Login({
         <div className="login-holder">
           <a className="login-button" onClick={() => loginClicked()}>Login</a>
             {
-                loginVisible &&(
+                loginVisible && (
                     <div className="login-form-holder">
                         <form className="login-form" onSubmit={handleSubmit}>
                             <button className="close-login" onClick={() => setLoginVisible(false)}>X</button>
